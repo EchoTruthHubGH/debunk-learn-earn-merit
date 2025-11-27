@@ -1,12 +1,43 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta http-equiv="refresh" content="0; url=https://echotruthhub.news/myths.html" />
-    <link rel="canonical" href="https://echotruthhub.news/myths.html" />
-    <title>Myth Archive – Echo Truth Hub</title>
-    <script>window.location.href = "https://echotruthhub.news/myths.html"</script>
-  </head>
-  <body>
-    <p>Redirecting to the official Myth Archive… <a href="https://echotruthhub.news/myths.html">click here if nothing happens</a></p>
-  </body>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Myth Archive – Echo Truth Hub</title>
+<style>
+  body{background:#0A0F14;color:#fff;font-family:system-ui,sans-serif;line-height:1.7;max-width:900px;margin:3rem auto;padding:0 1rem;}
+  h1{color:#00BFA6;}
+  .lang{position:fixed;top:20px;right:20px;z-index:10;}
+  .lang button{background:#00BFA6;color:#000;border:none;padding:0.6em 1em;border-radius:20px;margin-left:0.5em;cursor:pointer;font-weight:bold;}
+  .content{display:none;}
+  .en{display:block;}
+  table{width:100%;border-collapse:collapse;margin:2em 0;}
+  th,td{padding:1em;border-bottom:1px solid #00BFA633;text-align:left;}
+  th{background:#1a2630;color:#00BFA6;}
+</style>
+</head>
+<body>
+
+<div class="lang">
+  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.en').style.display='block')">EN</button>
+  <button onclick="document.querySelectorAll('.content').forEach(e=>e.style.display='none');document.querySelector('.nl').style.display='block')">NL</button>
+</div>
+
+<div class="content en">
+  <h1>Myth Archive</h1>
+  <p>Every myth gets a permanent ID and can never be repeated.<br>
+  Once settled, the best evidence earns the pot — forever on record.</p>
+  <!-- English table -->
+</div>
+
+<div class="content nl">
+  <h1>Mythe Archief</h1>
+  <p>Elke mythe krijgt een permanente ID en kan nooit worden herhaald.</p>
+  <p>Zodra de mythe is 'opgelost', verdient het beste bewijs de prijzenpot — en staat het voor altijd geregistreerd.</p>
+  <!-- Dutch table with your text -->
+</div>
+
+<p style="margin-top:4em;text-align:center;"><a href="/">← Back</a></p>
+
+</body>
 </html>
