@@ -16,21 +16,50 @@
 <meta name="twitter:image" content="https://echotruthhub.news/header.svg">
 <link rel="canonical" href="https://echotruthhub.news/">
 <style>
-body{margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;}
-header img{width:100vw;height:auto;display:block;}
-main{max-width:1000px;margin:40px auto;padding:0 20px;}
-h1{font-size:3.4em;margin:2.5rem 0 2rem;color:#FFB800;line-height:1.2;text-align:center;font-weight:900;}
-h2{font-size:2.6em;margin:3rem 0 1.2em;color:#00BFA6;line-height:1.2;}
-p{font-size:1.18em;margin-bottom:1.4em;}
-a{color:#00BFA6;text-decoration:none;}
-.box{background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
-.play{background:#1a2630;padding:4rem 2rem;border-radius:20px;margin:5rem 0;text-align:center;box-shadow:0 20px 60px rgba(0,191,166,0.2);}
-.play h2{font-size:3.6em;margin:0 0 1rem;color:#fff;}
-.bigcta{background:#00BFA6;color:#000;padding:2rem 5rem;font-size:2.5rem;font-weight:900;border-radius:20px;display:inline-block;margin:2.5rem 0;}
-.xcta{background:#1a2630;padding:3rem 2rem;border-radius:16px;margin:4em 0;text-align:center;}
-.xcta h2{font-size:2.4em;color:#00BFA6;margin-bottom:1rem;}
-.philo h2{cursor:pointer;font-size:2.1em;color:#00BFA6;margin:3.5em 0 1em;}
-.philo div{display:none;background:rgba(0,191,166,0.08);padding:2.8rem;border-radius:16px;margin:2rem 0;border:1px solid #00BFA622;}
-footer{margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;}
-.lang-toggle{position:fixed;top:50%;right:12px;transform:translateY(-50%);z-index:1000;display:flex;flex-direction:column;gap:12px;}
-.lang-toggle button{background:#00BFA6;color:#000;border:none;width:56px;height:56px;border-radius:50%;font-size:2.2em;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.
+  body{margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;}
+  header img{width:100vw;height:auto;display:block;}
+  main{max-width:1000px;margin:40px auto;padding:0 20px;}
+  h1{font-size:3.4em;margin:2.5rem 0 2rem;color:#FFB800;line-height:1.2;text-align:center;font-weight:900;}
+  h2{font-size:2.6em;margin:2.8em 0 1.2em;color:#00BFA6;line-height:1.2;}
+  p{font-size:1.18em;margin-bottom:1.4em;}
+  a{color:#00BFA6;text-decoration:none;}
+  .box{background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
+  .play{background:#1a2630;padding:4rem 2rem;border-radius:20px;margin:5rem 0;text-align:center;box-shadow:0 20px 60px rgba(0,191,166,0.2);}
+  .play h2{font-size:3.6em;margin:0 0 1rem;color:#fff;}
+  .bigcta{background:#00BFA6;color:#000;padding:2rem 5rem;font-size:2.5rem;font-weight:900;border-radius:20px;display:inline-block;margin:2.5rem 0;}
+  .xcta{background:#1a2630;padding:3rem 2rem;border-radius:16px;margin:4em 0;text-align:center;}
+  .xcta h2{font-size:2.4em;color:#00BFA6;margin-bottom:1rem;}
+  .philo h2{cursor:pointer;font-size:2.1em;color:#00BFA6;margin:3.5em 0 1em;}
+  .philo div{display:none;background:rgba(0,191,166,0.08);padding:2.8rem;border-radius:16px;margin:2rem 0;border:1px solid #00BFA622;}
+  footer{margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;}
+  .lang-toggle{position:fixed;top:50%;right:12px;transform:translateY(-50%);z-index:1000;display:flex;flex-direction:column;gap:12px;}
+  .lang-toggle button{background:#00BFA6;color:#000;border:none;width:56px;height:56px;border-radius:50%;font-size:2.2em;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.4);}
+  .lang-toggle button:hover{background:#FFB800;}
+  .hidden{display:none;}
+</style>
+</head>
+<body>
+
+<div class="lang-toggle">
+  <button title="English" onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=en]').classList.remove('hidden');">🇬🇧</button>
+  <button title="Nederlands" onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=nl]').classList.remove('hidden');">🇳🇱</button>
+</div>
+
+<header>
+  <img src="header.svg" alt="Echo Truth Hub">
+</header>
+
+<h1>Debunk myths together, learn from real sources, and earn by merit for the best proof</h1>
+
+<main lang="en">
+  <h2>Weary of twisted headlines and leading narratives?</h2>
+  <p>Built and run by someone who got fed up with biased headlines and wanted a place where evidence consensually prevails. Independent, community-funded, proudly agenda-free.</p>
+  <p>We’re exhausted by redacted reality and coloured news. This is the calm, educational, and fun safe haven where skeptics, believers, and the curious meet on neutral ground — armed only with sources, wits, and logic.</p>
+
+  <h2>Imagine a place where evidence actually wins</h2>
+  <p>No shouting matches. Just clear claims, visible proof, and a scoreboard that rewards whoever brings the best evidence — nothing else.</p>
+
+  <div class="philo">
+    <h2 onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">Our Philosophy ⟡</h2>
+    <div>
+      <p>We’re not here to get
