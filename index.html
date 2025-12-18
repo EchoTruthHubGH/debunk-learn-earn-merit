@@ -48,14 +48,15 @@
 <body>
 <div class="lang-toggle">
   <button title="English" onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=en]').classList.remove('hidden');">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="32" height="19">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30" width="32" height="16">
       <clipPath id="t">
-        <path d="M25,15h25v15zv15h-25zh-25v-15zv-15h25z"/>
+        <path d="M30,15 h30 v15 h-30 z v-15 h-30 v15 h-30 z"/>
       </clipPath>
-      <path d="M0,0v30h50v-30z" fill="#012169"/>
-      <path d="M0,0 50,30M50,0 0,30" stroke="#fff" stroke-width="6"/>
-      <path d="M0,0 50,30M50,0 0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
-      <path d="M-1 11h22v-12h8v12h22v8h-22v12h-8v-12h-22z" fill="#C8102E" stroke="#FFF" stroke-width="2"/>
+      <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+      <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+      <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+      <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
     </svg>
   </button>
   <button title="Nederlands" onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=nl]').classList.remove('hidden');">
@@ -70,16 +71,49 @@
   <img src="header.svg" alt="Echo Truth Hub">
 </header>
 <main lang="en">
-  <!-- (all your English content – same as before) -->
-</main>
-<main lang="nl" class="hidden">
-  <!-- (all your Dutch content – same as before) -->
-</main>
-<footer>
-  <!-- (your footers – same as before) -->
-</footer>
-<footer style="margin-top: 60px; padding: 20px; text-align: center; font-size: 0.85em; color: #666; border-top: 1px solid #eee;">
-  <!-- (your company footer – same) -->
-</footer>
-</body>
-</html>
+  <h1>Debunk myths together, Learn from real sources,<br>&<br>earn by Merit for the best Proof</h1>
+  <h2>Weary of twisted headlines and leading narratives?</h2>
+  <p>Built and run by someone who got fed up with biased headlines and wanted a place where evidence consensually prevails. Independent, community-funded, proudly agenda-free.</p>
+  <p>We’re exhausted by redacted reality and coloured news. This is the calm, educational, and fun safe haven where skeptics, believers, and the curious meet on neutral ground — armed only with sources, wits, and logic.</p>
+  <h2>Imagine a place where evidence actually wins</h2>
+  <p>No shouting matches. Just clear claims, visible proof, and a scoreboard that rewards whoever brings the best evidence — nothing else.</p>
+  <div class="philo">
+    <h2 class="gold" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">Our Philosophy ⟡</h2>
+    <div>
+      <p>We’re not here to get rich. We’re here because the world is loud with half-truths and people who bring real evidence deserve more than just likes.</p>
+      <p>The €1.21 you pay keeps the lights on and funds the pot. Nothing else — no ads, no investors, no hidden agenda. Just a community-funded campfire where the best proof gets a respectful, tangible “thank you” in cash.</p>
+      <p>Think of it as a fun, collaborative adventure in the jungle of twisted headlines — where knowledge earns respect… and a little money on the side.</p>
+      <p style="margin-top:1.5em;font-size:0.95em;opacity:0.9;">
+        → Merit first. Learning second. Money last.<br>
+        That’s the only order that feels honest.
+      </p>
+    </div>
+  </div>
+  <h2>Real people (You!), Real proof, Real reward</h2>
+  <div class="box">
+    <strong>How it works (skill, not luck)</strong>
+    <ul style="margin:1.5em 0;padding-left:1.5em;font-size:1.1em;">
+      <li>Anyone can reply with evidence — but only paid entries can earn the pot</li>
+      <li>Pay €1.21 entry (incl. VAT) → reply on X with sources + #TruthWithTeeth</li>
+      <li>72 h — community likes decide the top contributor</li>
+      <li>Minimum 10 entries → best evidence earns max 35% of pot</li>
+      <li>Winner paid via Bunq within 24 h — announced publicly</li>
+    </ul>
+  </div>
+  <div class="play">
+    <h2>Ready to play?</h2>
+    <p>Your €1.21 entry is just A click away</p>
+    <a href="https://bunq.me/EchoTruthHubEntry" target="_blank" class="bigcta">1 Click to Play</a>
+    <p style="margin-top:2em;font-size:1.1em;opacity:0.9;">
+      Add “Entry @yourhandle” in notes · Global · Secure · <strong>Skill game, not gambling</strong>
+    </p>
+  </div>
+  <div class="xcta">
+    <h2>Not all pain – join the fun on X</h2>
+    <p>Live bounties, real discussions, awesome people debunking myths together. Follow to see the adventure unfold (no pain, all gain).</p>
+    <a href="https://x.com/EchoTruthHub" target="_blank" class="bigcta">Follow on X</a>
+  </div>
+  <h2>About the guy behind it</h2>
+  <p>One early morning I woke up, grabbed my phone, and — like so many of us — ended up scrolling way longer than planned.
+  The sheer amount of half-truths and noise just left me tired and overwhelmed.</p>
+  <p>I noticed a lot of
