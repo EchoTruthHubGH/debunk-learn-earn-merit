@@ -1,51 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- ... (keep all your meta and title stuff the same as before) ... -->
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Echo Truth Hub – Debunk myths together. Learn from real sources. & Earn by Merit for the best Proof.</title>
+<meta name="description" content="Debunk myths together. Learn from real sources. & Earn by Merit for the best Proof.">
+<meta property="og:title" content="Echo Truth Hub – Debunk myths together. Learn from real sources. & Earn by Merit for the best Proof.">
+<meta property="og:description" content="Debunk myths together. Learn from real sources. & Earn by Merit for the best Proof.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://echotruthhub.news/">
+<meta property="og:image" content="https://echotruthhub.news/header.svg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Echo Truth Hub – Debunk myths together. Learn from real sources. & Earn by Merit for the best Proof.">
+<meta name="twitter:description" content="Debunk myths together. Learn from real sources. & Earn by Merit for the best Proof.">
+<meta name="twitter:image" content="https://echotruthhub.news/header.svg">
+<link rel="canonical" href="https://echotruthhub.news/">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self';">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <style>
-  /* ... (keep all your existing styles) ... */
-
-  /* Pretty side flag buttons – big and fun! */
-  .lang-toggle {
-    position: fixed;
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    gap: 16px; /* a little more space between flags */
-  }
-  .lang-toggle button {
-    background: #00BFA6;
-    color: #000;
-    border: none;
-    width: 64px; /* bigger for easy tap */
-    height: 64px;
-    border-radius: 50%;
-    font-size: 2.8em; /* bigger flags */
-    cursor: pointer;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .lang-toggle button:hover {
-    background: #FFB800; /* gold fun! */
-    transform: scale(1.1); /* little grow on hover */
-  }
+  body{margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;}
+  header img{width:100vw;height:auto;display:block;}
+  main{max-width:1000px;margin:40px auto;padding:0 20px;}
+  h1{font-size:3.4em;margin:2.5rem 0 2rem;color:#FFB800;line-height:1.45;text-align:center;font-weight:900;}
+  h2{font-size:2.6em;margin:3rem 0 1.2em;color:#00BFA6;line-height:1.2;text-align:center;}
+  h2.gold{color:#FFB800;}
+  p{font-size:1.18em;margin-bottom:1.4em;}
+  a{color:#00BFA6;text-decoration:none;}
+  .box{background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
+  .play{background:#1a2630;padding:4rem 2rem;border-radius:20px;margin:5rem 0;text-align:center;box-shadow:0 20px 60px rgba(0,191,166,0.2);}
+  .play h2{font-size:3.6em;margin:0 0 1rem;color:#fff;}
+  .bigcta{background:#00BFA6;color:#000;padding:2rem 5rem;font-size:2.5rem;font-weight:900;border-radius:20px;display:inline-block;margin:2.5rem 0;}
+  .xcta{background:#1a2630;padding:3rem 2rem;border-radius:16px;margin:4em 0;text-align:center;}
+  .xcta h2{font-size:2.4em;color:#00BFA6;margin-bottom:1rem;}
+  .philo h2{cursor:pointer;font-size:2.1em;margin:3.5em 0 1em;text-align:center;}
+  .philo div{display:none;background:rgba(0,191,166,0.08);padding:2.8rem;border-radius:16px;margin:2rem 0;border:1px solid #00BFA622;}
+  footer{margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;}
+  .lang-toggle{position:fixed;top:50%;right:12px;transform:translateY(-50%);z-index:1000;display:flex;flex-direction:column;gap:12px;}
+  .lang-toggle button{background:#00BFA6;color:#000;border:none;width:56px;height:56px;border-radius:50%;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;padding:0;}
+  .lang-toggle button:hover{background:#FFB800;}
+  .lang-toggle svg{width:32px;height:32px;} /* Makes flags nice size inside button */
+  .hidden{display:none;}
 </style>
 </head>
 <body>
 
-<!-- Pretty side flags – the star of the show! -->
 <div class="lang-toggle">
-  <button title="English" onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=en]').classList.remove('hidden');">🇬🇧</button>
-  <button title="Nederlands" onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=nl]').classList.remove('hidden');">🇳🇱</button>
+  <button title="English" onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=en]').classList.remove('hidden');">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 30" width="32" height="19">
+      <clipPath id="t">
+        <path d="M25,15h25v15zv15h-25zh-25v-15zv-15h25z"/>
+      </clipPath>
+      <path d="M0,0v30h50v-30z" fill="#012169"/>
+      <path d="M0,0 50,30M50,0 0,30" stroke="#fff" stroke-width="6"/>
+      <path d="M0,0 50,30M50,0 0,30" clip-path="url(#t)" stroke="#C8102E" stroke-width="4"/>
+      <path d="M-1 11h22v-12h8v12h22v8h-22v12h-8v-12h-22z" fill="#C8102E" stroke="#FFF" stroke-width="2"/>
+    </svg>
+  </button>
+  <button title="Nederlands" onclick="document.querySelectorAll('main').forEach(m=>m.classList.add('hidden'));document.querySelector('main[lang=nl]').classList.remove('hidden');">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 9 6" width="32" height="21">
+      <rect fill="#21468B" width="9" height="6"/>
+      <rect fill="#FFF" width="9" height="4"/>
+      <rect fill="#AE1C28" width="9" height="2"/>
+    </svg>
+  </button>
 </div>
 
-<!-- ... (rest of your body, header, mains, footer exactly as before) ... -->
+<header>
+  <img src="header.svg" alt="Echo Truth Hub">
+</header>
 
-</body>
-</html>
+<main lang="en">
+  <h1>Debunk myths together, Learn from real sources,<br>&<br>earn by Merit for the best Proof</h1>
+
+  <h2>Weary of twisted headlines and leading narratives?</h2>
+  <p>Built and run by someone who got fed up with biased headlines and wanted a place where evidence consensually prevails. Independent, community-funded, proudly agenda-free.</p>
+  <p>We’re exhausted by redacted reality and coloured news. This is the calm, educational, and fun safe haven where skeptics, believers, and the curious meet on neutral ground — armed only with sources, wits, and logic.</p>
+
+  <h2>Imagine a place where evidence actually wins</h2>
+  <p>No shouting matches. Just clear claims, visible proof, and a scoreboard that rewards whoever brings the best evidence — nothing else.</p>
+
+  <div class="philo">
+    <h2 class="gold" onclick="this.nextElementSibling.style.display=this.nextElementSibling.style.display==='block'?'none':'block';">Our Philosophy ⟡</h2>
+    <div>
+      <p>We’re not here to get rich. We’re here because the world is loud with half-truths and people who bring real evidence deserve more than just likes.</p>
+      <p>The €1.21 you pay keeps the lights on and funds the pot. Nothing else — no ads, no investors, no hidden agenda. Just a community-funded campfire where the best proof gets a respectful, tangible “thank you” in cash.</p>
+      <p>Think of it as a fun, collaborative adventure in the jungle of twisted headlines — where knowledge earns respect… and a little money on the side.</p>
+      <p style="margin-top:1.5em;font-size:
