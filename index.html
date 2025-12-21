@@ -25,6 +25,7 @@
   main{max-width:1000px;margin:40px auto;padding:0 20px;}
   h1{font-size:3.4em;margin:2.5rem 0 2rem;color:#FFB800;line-height:1.45;text-align:center;font-weight:900;}
   h2{font-size:2.6em;margin:3rem 0 1.2em;color:#00BFA6;line-height:1.2;text-align:center;}
+  h2.gold{color:#FFB800;}
   p{font-size:1.18em;margin-bottom:1.4em;}
   a{color:#00BFA6;text-decoration:none;}
   .box{background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
@@ -37,9 +38,7 @@
   .xcta h2{font-size:2.4em;color:#00BFA6;margin-bottom:1rem;}
   .philo h2{font-size:2.6em;margin:3rem 0 1.2em;color:#00BFA6;line-height:1.2;text-align:center;cursor:pointer;transition:color 0.3s ease;}
   .philo h2:hover{color:#FFB800;}
-  .philo .intro{margin:1em 0 2em;text-align:center;font-size:1.1em;}
-  .philo .hidden-content{max-height:0;opacity:0;overflow:hidden;transition:max-height 0.6s ease, opacity 0.6s ease;padding:0 2rem;}
-  .philo.open .hidden-content{max-height:1000px;opacity:1;padding:2.8rem;}
+  .philo div{display:none;background:rgba(0,191,166,0.08);padding:2.8rem;border-radius:16px;margin:2rem 0;border:1px solid #00BFA622;}
   footer{margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;}
   .lang-toggle{position:fixed;top:50%;right:12px;transform:translateY(-50%);z-index:1000;display:flex;flex-direction:column;gap:12px;}
   .lang-toggle button{background:#00BFA6;border:none;width:56px;height:56px;border-radius:50%;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;padding:0;transition:all 0.3s ease;}
@@ -81,9 +80,9 @@
   <h2>Imagine a place where evidence actually wins</h2>
   <p>No shouting matches. Just clear claims, visible proof, and a scoreboard that rewards whoever brings the best evidence — nothing else.</p>
   <div class="philo">
-    <h2 onclick="this.parentElement.classList.toggle('open')">Our Philosophy</h2>
-    <p class="intro">We’re not here to get rich. We’re here because the world is loud with half-truths or plain out lies conflicting with reality. We would like to encourage kin alike who feel the same to bring real evidence so that we may learn from each other.</p>
-    <div class="hidden-content">
+    <h2 class="gold" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">Our Philosophy ⟡</h2>
+    <div>
+      <p>We’re not here to get rich. We’re here because the world is loud with half-truths or plain out lies conflicting with reality. We would like to encourage kin alike who feel the same to bring real evidence so that we may learn from each other.</p>
       <p>We all deserve more than just likes for clout because it’s sensational, misleading or misinforming. It’s for all that like an honest and safe place to discuss around the campfire.</p>
       <p>The €1.21 you pay keeps the lights on and funds the pot. Nothing else — no ads, no investors, no hidden agenda. Just a community-funded campfire where the best proof gets a respectful, tangible “thank you” in cash.</p>
       <p>Think of it as a fun, collaborative adventure in the jungle of twisted headlines — where knowledge earns respect… and a little money on the side.</p>
@@ -147,9 +146,9 @@
   <h2>Stel je een plek voor waar de realiteit werkelijk wint</h2>
   <p>Geen geschreeuw. Gewoon heldere claims, zichtbaar bewijs, en een 'scorebord' dat het beste bewijs beloont — niets anders.</p>
   <div class="philo">
-    <h2 onclick="this.parentElement.classList.toggle('open')">Onze Filosofie</h2>
-    <p class="intro">We zijn hier niet om rijk te worden. We zijn hier omdat de wereld vol is met halve waarheden of ronduit leugens die botsen met de realiteit. We willen gelijkgestemden aanmoedigen die hetzelfde voelen om echt bewijs te brengen, zodat we van elkaar kunnen leren.</p>
-    <div class="hidden-content">
+    <h2 class="gold" onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">Onze Filosofie ⟡</h2>
+    <div>
+      <p>We zijn hier niet om rijk te worden. We zijn hier omdat de wereld vol is met halve waarheden of ronduit leugens die botsen met de realiteit. We willen gelijkgestemden aanmoedigen die hetzelfde voelen om echt bewijs te brengen, zodat we van elkaar kunnen leren.</p>
       <p>We verdienen allemaal meer dan alleen likes voor clout omdat het sensationeel, misleidend of desinformerend is. Het is voor iedereen die een eerlijke en veilige plek wil om te discussiëren rond het kampvuur.</p>
       <p>De €1,21 inleg houdt de motor draaiende en spekt de pot. Niets anders — geen advertenties, geen investeerders, geen verborgen agenda. Gewoon een gemeenschappelijke plek bij het kampvuur waar het beste bewijs een respectvol, tastbaar “dank je wel” als beloning ontvangt.</p>
       <p>Zie het als een plezierig avontuur in de weelderige woestenij van het interwebs — waar kennis respect verdient… en een kers op de taart toe.</p>
@@ -159,7 +158,50 @@
       </p>
     </div>
   </div>
-  <!-- rest of Dutch content -->
+  <h2>Echte mensen (Jij dus).. een echte beloning</h2>
+  <div class="box">
+    <strong>Hoe het werkt (vaardigheid, niet geluk)</strong>
+    <ul style="margin:1.5em 0;padding-left:1.5em;font-size:1.1em;">
+      <li>Iedereen kan reageren met bewijs — maar alleen met betaalde inleg kan de pot worden verdeeld.</li>
+      <li>Meerdere inleggen toegestaan – beste enkel bewijs wint door gemeenschap merit.</li>
+      <li>Leg €1,21 (incl. BTW) veilig in via Mollie hieronder</li>
+      <li>→ reageer op X met bronnen + #TruthWithTeeth</li>
+      <li>72 uur — gemeenschap-likes bepalen de topbijdrager.</li>
+      <li>Minimaal 10 deelnemers → beste bewijs verdient max 35% van de pot.</li>
+      <li>Verdiensten uitgekeerd binnen 24 uur — publiekelijk aangekondigd.</li>
+    </ul>
+  </div>
+  <div class="play">
+    <h2>Klaar om te spelen?</h2>
+    <p>Je €1,21 entry is maar één klik verwijderd</p>
+    <a href="https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk" target="_blank" class="bigcta">1 Klik om te Spelen</a>
+    <img src="mollie-badge.png" alt="Secure payments powered by Mollie – Cards and more" class="mollie-badge">
+    <p style="margin-top:2em;font-size:1.1em;opacity:0.9;">
+      Vermeld "Entry @jouwhandle en de bounty code M000X" in de betalingsomschrijving (vervang X door het juiste bounty-nummer) · Wereldwijd · Veilig<br>
+      <strong>Vaardigheidsspel, geen gokken</strong><br>
+      Veel succes!
+    </p>
+  </div>
+  <div class="xcta">
+    <h2>Niet alleen maar 'ergernis' – doe mee aan het plezier op X</h2>
+    <p>Lopende premies, echte gesprekken, toffe mensen die samen mythen ontmaskeren. Volg om het avontuur te zien ontvouwen (geen ergernis, alleen wijsheid en plezier).</p>
+    <a href="https://x.com/EchoTruthHub" target="_blank" class="bigcta">Volg op X</a>
+  </div>
+  <h2>Over de persoon achter dit initiatief</h2>
+  <p>Eén vroege ochtend werd ik wakker, pakte mijn telefoon en — zoals zovelen — eindigde ik veel langer aan het scrollen dan gepland.
+  Door de hoeveelheid halve waarheden en ruis raakte ik simpelweg afgestompt en overweldigd.</p>
+  <p>Ik merkte dat veel vrienden, familie en willekeurige mensen hetzelfde jeukende gevoel ervaren.</p>
+  <p>Dus dacht ik: wat als we die stille zucht omzetten in iets leuks en nuttigs?</p>
+  <p>Een plek waar gewone mensen echte bronnen delen, naar elkaar luisteren en leren — zonder dat iemand zich superieur waant of oordelend gedraagt.</p>
+  <p>Zo is Echo Truth Hub geboren.</p>
+  <p>Niet omdat ik een professionele mytheontkrachter ben. Gewoon omdat de ontstemming door velen gedeeld wordt… en omdat iedereen een goed gesprek waardeert op basis van openheid en wederkerigheid.</p>
+  <p>Dus. Daar zijn wij dan.</p>
+  <p>Geen agenda, alleen nieuwsgierigheid en een ideaal met beloning.</p>
+  <p>Ideeën of gedachten? Stuur mij een PB — begin met het woord <strong>TRUTH</strong> en ik antwoord altijd.</p>
+  <div class="box">
+    Vragen? PB mijn persoonlijke account, begin met <strong>TRUTH</strong>.<br>
+    Fooien & koffie? PB @EchoTruthHub.
+  </div>
 </main>
 <footer>
   <p>Beta · 18+ · <strong>Vaardigheidsspel – geen gokken</strong> · Geen financieel/medisch advies</p>
