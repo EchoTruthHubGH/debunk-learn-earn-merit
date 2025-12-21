@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Echo Truth Hub – Debunk myths together. Learn from real sources. & Earn by Merit for the best Proof.</title>
+<!-- all your meta tags same -->
+<style>
+  /* all your existing styles same */
+  .philo h2 {font-size:2.6em;margin:3rem 0 1.2em;color:#00BFA6;line-height:1.2;text-align:center;cursor:pointer;transition:color 0.3s ease;}
+  .philo h2:hover {color:#FFB800;}
+  .philo div {display:none;background:rgba(0,191,166,0.08);padding:2.8rem;border-radius:16px;margin:2rem 0;border:1px solid #00BFA622;}
+  /* other styles same */
+</style>
+</head>
+<body>
+<div class="lang-toggle">
+  <button title="English" onclick="toggleLang('en')">
+    <svg> <!-- your UK SVG same -->
+    </svg>
+  </button>
+  <button title="Nederlands" onclick="toggleLang('nl')">
+    <svg> <!-- your Dutch SVG same -->
+    </svg>
+  </button>
+</div>
+<header>
+  <img src="header.svg" alt="Echo Truth Hub">
+</header>
+<main lang="en">
+  <!-- full English content -->
+  <div class="philo">
+    <h2 onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">Our Philosophy ⟡</h2>
+    <div>
+      <!-- full philosophy text with new sentence -->
+    </div>
+  </div>
+  <!-- rest English -->
+</main>
+<main lang="nl" class="hidden">
+  <!-- full Dutch content -->
+  <div class="philo">
+    <h2 onclick="this.nextElementSibling.style.display = this.nextElementSibling.style.display === 'block' ? 'none' : 'block';">Onze Filosofie ⟡</h2>
+    <div>
+      <!-- full Dutch philosophy text -->
+    </div>
+  </div>
+  <!-- rest Dutch -->
+</main>
+<!-- footers same -->
+<script>
+function toggleLang(lang) {
+  document.querySelectorAll('main').forEach(m => m.classList.add('hidden'));
+  document.querySelector(`main[lang="${lang}"]`).classList.remove('hidden');
+}
+</script>
+</body>
+</html>
+
+
 
