@@ -42,7 +42,7 @@
   .philo.open .diamond {transform:rotate(45deg);}
   .philo .intro {margin:1em 0 2em;text-align:center;font-size:1.1em;}
   .philo .hidden-content {max-height:0;opacity:0;overflow:hidden;transition:max-height 0.6s ease, opacity 0.6s ease;padding:0 2rem;}
-  .philo.open .hidden-content {max-height:1000px;opacity:1;padding:2rem;}
+  .philo.open .hidden-content {max-height:1000px;opacity:1;padding:2.8rem;}
   footer{margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;}
   .lang-toggle{position:fixed;top:50%;right:12px;transform:translateY(-50%);z-index:1000;display:flex;flex-direction:column;gap:12px;}
   .lang-toggle button{background:#00BFA6;border:none;width:56px;height:56px;border-radius:50%;cursor:pointer;box-shadow:0 4px 15px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;padding:0;transition:all 0.3s ease;}
@@ -77,18 +77,24 @@
   <img src="header.svg" alt="Echo Truth Hub">
 </header>
 <main lang="en">
-  <!-- all English content -->
+  <!-- full English content with philosophy structure -->
   <div class="philo" onclick="this.classList.toggle('open')">
     <h2>Our Philosophy <span class="diamond">⟡</span></h2>
     <p class="intro">We’re not here to get rich. We’re here because the world is loud with half-truths or plain out lies conflicting with reality. We would like to encourage kin alike who feel the same to bring real evidence so that we may learn from each other.</p>
     <div class="hidden-content">
-      <!-- longer part -->
+      <p>We all deserve more than just likes for clout because it’s sensational, misleading or misinforming. It’s for all that like an honest and safe place to discuss around the campfire.</p>
+      <p>The €1.21 you pay keeps the lights on and funds the pot. Nothing else — no ads, no investors, no hidden agenda. Just a community-funded campfire where the best proof gets a respectful, tangible “thank you” in cash.</p>
+      <p>Think of it as a fun, collaborative adventure in the jungle of twisted headlines — where knowledge earns respect… and a little money on the side.</p>
+      <p style="margin-top:1.5em;font-size:0.95em;opacity:0.9;">
+        → Merit first. Learning second. Money last.<br>
+        That’s the only order that feels honest.
+      </p>
     </div>
   </div>
-  <!-- rest of English -->
+  <!-- rest of English content -->
 </main>
 <main lang="nl" class="hidden">
-  <!-- all Dutch content with same philo structure -->
+  <!-- full Dutch content with same philosophy structure -->
 </main>
 <footer>
   <!-- footers -->
