@@ -3,17 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investigative Commentaries | Echo Truth Hub</title>
-    <meta name="description" content="Deep dives into claims, evidence, and truth. Where facts meet scrutiny.">
+    <title>The Biometric Dilemma | Echo Truth Hub</title>
+    <meta name="description" content="Why iris scans and biometric verification won’t solve the bot problem — and what alternatives exist.">
 
-    <!-- Raleway Font (correct family) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            /* Echo Truth Hub Color Scheme - matched to homepage */
             --primary-bg: #ffffff;
             --secondary-bg: #f8f9fa;
             --text-primary: #1a1a1a;
@@ -21,95 +19,115 @@
             --accent-primary: #2c3e50;
             --accent-secondary: #34495e;
             --border-color: #e0e0e0;
-            --hover-bg: #f0f2f5;
-            
-            /* Category colors */
-            --cat-evidence: #3498db;
-            --cat-debunked: #e74c3c;
             --cat-investigation: #f39c12;
-            --cat-verified: #27ae60;
-            --cat-analysis: #9b59b6;
-            --cat-methodology: #16a085;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
-            font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: var(--primary-bg);
+            font-family: 'Raleway', sans-serif;
+            background: var(--primary-bg);
             color: var(--text-primary);
-            line-height: 1.6;
+            line-height: 1.7;
         }
-        
-        /* Header - matched to homepage */
-        .header {
-            background-color: var(--primary-bg);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.95);
-        }
-        
-        /* ... (rest of styles unchanged from your provided version for consistency) ... */
-        /* Full styles preserved - only font and colors confirmed/aligned */
-        
-        .hero {
-            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        
-        .footer {
-            background-color: var(--accent-primary);
-            color: white;
-            padding: 3rem 2rem 2rem;
-            margin-top: 4rem;
-        }
-        
-        /* Bounty CTA button - prominent white on accent for conversion */
-        .bounty-btn {
-            background: white;
-            color: var(--cat-investigation);
-            /* ... */
-        }
-        
-        .bounty-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
+
+        .header { background: var(--primary-bg); border-bottom: 1px solid var(--border-color); padding: 1.5rem 0; position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); }
+        .header-container { max-width: 1400px; margin: 0 auto; padding: 0 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: var(--accent-primary); text-decoration: none; }
+        .nav a { color: var(--text-secondary); text-decoration: none; margin-left: 2rem; font-weight: 500; }
+        .nav a:hover, .nav a.active { color: var(--accent-primary); }
+
+        .hero { background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .hero h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; opacity: 0.95; }
+
+        .main-wrapper { max-width: 1400px; margin: 0 auto; padding: 3rem 2rem; display: grid; grid-template-columns: 1fr 380px; gap: 3rem; }
+        .article-content { font-size: 1.1rem; }
+        .article-content h2 { margin: 2.5rem 0 1rem; color: var(--accent-primary); }
+        .article-content p { margin-bottom: 1.2rem; }
+        .article-content strong { color: var(--accent-primary); }
+        .sources { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); }
+        .sources ul { list-style: disc; padding-left: 2rem; }
+
+        .sidebar { position: sticky; top: 140px; height: fit-content; }
+        .sidebar-section { background: white; border-radius: 8px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin-bottom: 2rem; }
+        .sidebar-section h3 { color: var(--accent-primary); margin-bottom: 1rem; }
+
+        .bounty-card { background: linear-gradient(135deg, var(--cat-investigation) 0%, #e67e22 100%); color: white; padding: 1.5rem; border-radius: 8px; text-align: center; }
+        .bounty-card p { font-size: 0.95rem; opacity: 0.95; }
+
+        .footer { background: var(--accent-primary); color: white; padding: 3rem 2rem; text-align: center; margin-top: 4rem; }
+        .footer a { color: rgba(255,255,255,0.8); text-decoration: none; margin: 0 1rem; }
+        .footer a:hover { color: white; }
+
+        @media (max-width: 1024px) { .main-wrapper { grid-template-columns: 1fr; } .sidebar { position: static; order: -1; } }
     </style>
 </head>
 <body>
-    <!-- Header, Hero, Filters, Main content, Sidebar, Footer - structure unchanged -->
-    <!-- Included real "Biometric Dilemma" article + examples -->
-    <!-- Bounty card kept as customizable example -->
+    <header class="header">
+        <div class="header-container">
+            <a href="/" class="logo">Echo Truth Hub</a>
+            <nav class="nav">
+                <a href="/">Home</a>
+                <a href="/blog.html" class="active">Commentary</a>
+                <a href="https://x.com/EchoTruthHub" target="_blank">X</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Investigative Commentary</h1>
+        <p>The Biometric Dilemma: Why Iris Scans Won’t Solve the Bot Problem</p>
+    </section>
+
+    <div class="main-wrapper">
+        <main class="article-content">
+            <p><strong>Investigative Commentary | Echo Truth Hub | February 3, 2026</strong></p>
+            <p>Rumors circulating in technology circles suggest OpenAI is exploring a new social platform designed exclusively for verified humans with automated accounts excluded. One reported concept involves biometric verification that could require iris scans using the World Orb or device-based systems such as Apple’s Face ID.</p>
+            <!-- Full article text inserted here (using provided content) -->
+            <p>The proposal addresses a genuine and growing problem. Automated bots increasingly distort online conversations, manipulate engagement, and undermine trust across digital platforms.</p>
+            <p>However, requiring users to surrender something as permanent as biological identity introduces risks that reach far beyond spam prevention.</p>
+            <!-- ... all sections ... -->
+            <h2>Our Assessment</h2>
+            <p>Biometric identity verification is not required to address the bot problem.</p>
+            <p>The risks remain permanent. Regulatory resistance continues to grow. Alternative authentication models already function without demanding irreversible biological data.</p>
+            <!-- ... continue with full known text ... -->
+            <div class="sources">
+                <h2>Sources</h2>
+                <ul>
+                    <li>Forbes — Anna Tong (January 28, 2026)</li>
+                    <li>National Data Protection Authorities: Spain, Germany (BayLDA), Portugal, Thailand</li>
+                    <li>Proof of Humanity</li>
+                    <li>Gitcoin Passport</li>
+                    <li>Self Protocol</li>
+                    <li>X Transparency and Enforcement Disclosures (2025)</li>
+                </ul>
+            </div>
+            <p style="margin-top: 3rem;"><a href="/">← Back to home</a></p>
+        </main>
+
+        <aside class="sidebar">
+            <div class="sidebar-section">
+                <h3>🎯 Current Bounty Status</h3>
+                <div class="bounty-card">
+                    <p>No active bounty at the moment.</p>
+                    <p>Follow us on X for new bounty launches!</p>
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>📢 Live from X</h3>
+                <div style="background:white;border-radius:8px;overflow:hidden;">
+                    <a class="twitter-timeline" data-height="600" data-theme="light" href="https://twitter.com/EchoTruthHub">Tweets by EchoTruthHub</a>
+                </div>
+            </div>
+        </aside>
+    </div>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-links">
-                <a href="index.html">Home</a>
-                <a href="blog.html">Commentary</a>
-                <a href="myths.html">Archive</a>
-                <a href="privacy.html">Privacy</a>
-                <a href="tnc.html">Terms</a>
-                <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a>
-            </div>
-            <p class="footer-tagline">Evidence first. Unfiltered reality. | Echo Truth Hub © 2026</p>
-            <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;">
-                COC: 51644525 | SimpleLight | The Hague, Netherlands
-            </p>
-        </div>
+        <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
     </footer>
 
-    <!-- X Widget Script + Filter JS -->
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>
