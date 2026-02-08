@@ -1,386 +1,232 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investigative Commentaries | Echo Truth Hub</title>
-    <meta name="description" content="Deep dives into claims, evidence, and truth. Where facts meet scrutiny.">
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-container">
+        <h1>Investigative Commentaries</h1>
+        <p>Deep dives into claims, evidence, and truth. Where facts meet scrutiny.</p>
+    </div>
+</section>
 
-    <!-- Raleway Font (corrected from Railway) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Category Filter -->
+<section class="category-filter">
+    <div class="filter-container">
+        <span class="filter-label">Filter by:</span>
+        <a href="#" class="category-tag evidence active">Evidence-Based</a>
+        <a href="#" class="category-tag debunked">Debunked</a>
+        <a href="#" class="category-tag investigation">Investigation</a>
+        <a href="#" class="category-tag verified">Verified</a>
+        <a href="#" class="category-tag analysis">Analysis</a>
+        <a href="#" class="category-tag methodology">Methodology</a>
+    </div>
+</section>
 
-    <style>
-        :root {
-            /* Echo Truth Hub Color Scheme */
-            --primary-bg: #ffffff;
-            --secondary-bg: #f8f9fa;
-            --text-primary: #1a1a1a;
-            --text-secondary: #666666;
-            --accent-primary: #2c3e50;
-            --accent-secondary: #34495e;
-            --border-color: #e0e0e0;
-            --hover-bg: #f0f2f5;
-            
-            /* Category colors */
-            --cat-evidence: #3498db;
-            --cat-debunked: #e74c3c;
-            --cat-investigation: #f39c12;
-            --cat-verified: #27ae60;
-            --cat-analysis: #9b59b6;
-            --cat-methodology: #16a085;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background-color: var(--primary-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-        }
-        
-        /* Header */
-        .header {
-            background-color: var(--primary-bg);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            background-color: rgba(255, 255, 255, 0.95);
-        }
-        
-        .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--accent-primary);
-            text-decoration: none;
-            letter-spacing: -0.5px;
-        }
-        
-        .nav {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-        
-        .nav a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-        
-        .nav a:hover,
-        .nav a.active {
-            color: var(--accent-primary);
-        }
-        
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        
-        .hero-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            letter-spacing: -1px;
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            opacity: 0.95;
-            font-weight: 400;
-        }
-        
-        /* Category Filter */
-        .category-filter {
-            background-color: var(--secondary-bg);
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid var(--border-color);
-            position: sticky;
-            top: 70px;
-            z-index: 90;
-        }
-        
-        .filter-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-        
-        .filter-label {
-            font-weight: 600;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-        
-        .category-tag {
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            border: 1px solid var(--border-color);
-            background-color: white;
-            color: var(--text-secondary);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-        
-        .category-tag:hover,
-        .category-tag.active {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .category-tag.evidence { border-color: var(--cat-evidence); color: var(--cat-evidence); }
-        .category-tag.debunked { border-color: var(--cat-debunked); color: var(--cat-debunked); }
-        .category-tag.investigation { border-color: var(--cat-investigation); color: var(--cat-investigation); }
-        .category-tag.verified { border-color: var(--cat-verified); color: var(--cat-verified); }
-        .category-tag.analysis { border-color: var(--cat-analysis); color: var(--cat-analysis); }
-        .category-tag.methodology { border-color: var(--cat-methodology); color: var(--cat-methodology); }
-        
-        .category-tag.evidence.active,
-        .category-tag.evidence:hover { background-color: var(--cat-evidence); color: white; }
-        .category-tag.debunked.active,
-        .category-tag.debunked:hover { background-color: var(--cat-debunked); color: white; }
-        .category-tag.investigation.active,
-        .category-tag.investigation:hover { background-color: var(--cat-investigation); color: white; }
-        .category-tag.verified.active,
-        .category-tag.verified:hover { background-color: var(--cat-verified); color: white; }
-        .category-tag.analysis.active,
-        .category-tag.analysis:hover { background-color: var(--cat-analysis); color: white; }
-        .category-tag.methodology.active,
-        .category-tag.methodology:hover { background-color: var(--cat-methodology); color: white; }
-        
-        /* Main Layout */
-        .main-wrapper {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 380px;
-            gap: 3rem;
-        }
-        
-        .main-content {
-            min-width: 0;
-        }
-        
-        /* Sidebar */
-        .sidebar {
-            position: sticky;
-            top: 140px;
-            height: fit-content;
-        }
-        
-        .sidebar-section {
-            background: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-            margin-bottom: 2rem;
-        }
-        
-        .sidebar-section h3 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--accent-primary);
-        }
-        
-        /* Bounty Card (generalized) */
-        .bounty-card {
-            background: linear-gradient(135deg, var(--cat-investigation) 0%, #e67e22 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        
-        .bounty-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-        }
-        
-        .bounty-card p {
-            font-size: 0.9rem;
-            opacity: 0.95;
-            margin-bottom: 1rem;
-        }
-        
-        .bounty-meta {
-            display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-        
-        .bounty-btn {
-            display: block;
-            width: 100%;
-            padding: 0.75rem;
-            background: white;
-            color: var(--cat-investigation);
-            text-align: center;
-            text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-            transition: transform 0.2s;
-        }
-        
-        .bounty-btn:hover {
-            transform: translateY(-2px);
-        }
-        
-        /* X Timeline */
-        .x-timeline {
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        /* Articles (featured + grid) */
-        .filterable-article {
-            transition: opacity 0.3s;
-        }
-        
-        /* ... (keeping all your existing article styles unchanged for brevity) ... */
-        
-        /* Footer */
-        .footer {
-            background-color: var(--accent-primary);
-            color: white;
-            padding: 3rem 2rem 2rem;
-            margin-top: 4rem;
-        }
-        
-        /* Responsive adjustments remain the same */
-    </style>
-</head>
-<body>
-    <!-- Header, Hero, etc. remain unchanged -->
+<!-- Main Content with Sidebar -->
+<div class="main-wrapper">
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Featured Article -->
+        <article class="featured-article">
+            <div class="featured-image"></div>
+            <div class="featured-content">
+                <span class="featured-category category-badge investigation">Investigation</span>
+                <h2><a href="#">The Anatomy of Viral Misinformation: How a Single Tweet Spread Across 47 Countries</a></h2>
+                <p class="article-excerpt">
+                    We traced a misleading health claim from its origin to its global spread, analyzing 2.3 million shares across 14 platforms. 
+                    What we discovered reveals the precise mechanics of how misinformation exploits emotional triggers and confirmation bias. 
+                    This is our complete methodology and findings.
+                </p>
+                <div class="article-meta">
+                    <span class="author">Echo Truth Team</span>
+                    <span class="date">February 8, 2026</span>
+                    <span>⏱ 12 min read</span>
+                </div>
+            </div>
+        </article>
 
-    <!-- Category Filter (added "All" + data-cat attributes) -->
-    <section class="category-filter">
-        <div class="filter-container">
-            <span class="filter-label">Filter by:</span>
-            <a href="#" class="category-tag active" data-cat="all">All</a>
-            <a href="#" class="category-tag evidence" data-cat="evidence">Evidence-Based</a>
-            <a href="#" class="category-tag debunked" data-cat="debunked">Debunked</a>
-            <a href="#" class="category-tag investigation" data-cat="investigation">Investigation</a>
-            <a href="#" class="category-tag verified" data-cat="verified">Verified</a>
-            <a href="#" class="category-tag analysis" data-cat="analysis">Analysis</a>
-            <a href="#" class="category-tag methodology" data-cat="methodology">Methodology</a>
-        </div>
-    </section>
-
-    <div class="main-wrapper">
-        <main class="main-content">
-            <!-- Featured Article (added filterable-article + data-cat) -->
-            <article class="featured-article filterable-article" data-cat="investigation">
-                <!-- content unchanged -->
+        <!-- Articles Grid -->
+        <div class="articles-grid">
+            <!-- Article 1 -->
+            <article class="article-card">
+                <div class="article-image"></div>
+                <div class="article-content">
+                    <span class="article-category category-badge debunked">Debunked</span>
+                    <h3><a href="#">Climate Data Manipulation Claims: What the Numbers Actually Show</a></h3>
+                    <p class="article-excerpt">
+                        Recent allegations suggest temperature data has been falsified. We examined the raw datasets from 12 independent sources.
+                    </p>
+                    <div class="article-meta">
+                        <span class="author">Dr. Sarah Chen</span>
+                        <span class="date">Feb 7</span>
+                        <span>⏱ 8 min</span>
+                    </div>
+                </div>
             </article>
 
-            <div class="articles-grid">
-                <article class="article-card filterable-article" data-cat="debunked"> <!-- content --> </article>
-                <article class="article-card filterable-article" data-cat="evidence"> <!-- content --> </article>
-                <article class="article-card filterable-article" data-cat="verified"> <!-- content --> </article>
-                <article class="article-card filterable-article" data-cat="analysis"> <!-- content --> </article>
-                <article class="article-card filterable-article" data-cat="methodology"> <!-- content --> </article>
-                <article class="article-card filterable-article" data-cat="investigation"> <!-- content --> </article>
-            </div>
-        </main>
-
-        <aside class="sidebar">
-            <div class="sidebar-section">
-                <h3>🎯 Active Bounty</h3>
-                <div class="bounty-card">
-                    <h4>Active Bounty: M000X</h4>
-                    <p>Current claim under investigation — best evidence wins share of pot.</p>
-                    <div class="bounty-meta">
-                        <span>💰 Growing Pot</span>
-                        <span>⏱ 72h duration</span>
+            <!-- Article 2 -->
+            <article class="article-card">
+                <div class="article-image"></div>
+                <div class="article-content">
+                    <span class="article-category category-badge evidence">Evidence-Based</span>
+                    <h3><a href="#">The Economics of Skill Games vs Gambling: A Legal Analysis</a></h3>
+                    <p class="article-excerpt">
+                        What separates skill-based competition from gambling? We break down legal precedents across EU jurisdictions.
+                    </p>
+                    <div class="article-meta">
+                        <span class="author">Marcus van der Berg</span>
+                        <span class="date">Feb 6</span>
+                        <span>⏱ 10 min</span>
                     </div>
-                    <a href="https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk" class="bounty-btn" target="_blank">
-                        Enter Bounty (€1.21)
-                    </a>
                 </div>
-                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">
-                    Reply on X with #TruthWithTeeth + sources. Best evidence (by community likes) wins up to 35% of pot. Min 10 entries required.
-                </p>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="article-card">
+                <div class="article-image"></div>
+                <div class="article-content">
+                    <span class="article-category category-badge verified">Verified</span>
+                    <h3><a href="#">AI-Generated Evidence: When Computer Vision Meets Court Standards</a></h3>
+                    <p class="article-excerpt">
+                        Can AI-analyzed footage be trusted in legal proceedings? We tested 5 leading platforms against ground truth.
+                    </p>
+                    <div class="article-meta">
+                        <span class="author">Tech Analysis Team</span>
+                        <span class="date">Feb 5</span>
+                        <span>⏱ 15 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="article-card">
+                <div class="article-image"></div>
+                <div class="article-content">
+                    <span class="article-category category-badge analysis">Analysis</span>
+                    <h3><a href="#">Why Fact-Checkers Get It Wrong: A Meta-Analysis of 500 Corrections</a></h3>
+                    <p class="article-excerpt">
+                        Even fact-checkers make mistakes. We analyzed 500 published corrections to identify patterns.
+                    </p>
+                    <div class="article-meta">
+                        <span class="author">Research Division</span>
+                        <span class="date">Feb 4</span>
+                        <span>⏱ 11 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 5 -->
+            <article class="article-card">
+                <div class="article-image"></div>
+                <div class="article-content">
+                    <span class="article-category category-badge methodology">Methodology</span>
+                    <h3><a href="#">How We Verify Sources: Inside Echo Truth Hub's 7-Step Process</a></h3>
+                    <p class="article-excerpt">
+                        Transparency is everything. Here's exactly how we evaluate claims and ensure our own work meets standards.
+                    </p>
+                    <div class="article-meta">
+                        <span class="author">Editorial Team</span>
+                        <span class="date">Feb 3</span>
+                        <span>⏱ 6 min</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Article 6 -->
+            <article class="article-card">
+                <div class="article-image"></div>
+                <div class="article-content">
+                    <span class="article-category category-badge investigation">Investigation</span>
+                    <h3><a href="#">The Psychology of Truth: Why Smart People Believe Conspiracy Theories</a></h3>
+                    <p class="article-excerpt">
+                        Intelligence isn't immunity. We explore cognitive mechanisms that make critical thinkers vulnerable.
+                    </p>
+                    <div class="article-meta">
+                        <span class="author">Dr. James Mitchell</span>
+                        <span class="date">Feb 1</span>
+                        <span>⏱ 9 min</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <!-- Active Bounty Section -->
+        <div class="sidebar-section">
+            <h3>🎯 Active Bounty</h3>
+            <div class="bounty-card">
+                <h4>M0007: French Vaccine Primes</h4>
+                <p>Best evidence on vaccine efficacy claims wins €35 from the pot.</p>
+                <div class="bounty-meta">
+                    <span>💰 Pot: €42.21</span>
+                    <span>⏱ 48h left</span>
+                </div>
+                <a href="https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk" class="bounty-btn" target="_blank">
+                    Enter Bounty (€1.21)
+                </a>
             </div>
-
-            <!-- X Timeline and CTA unchanged -->
-        </aside>
-    </div>
-
-    <!-- Footer (COC updated) -->
-    <footer class="footer">
-        <div class="footer-container">
-            <!-- links unchanged -->
-            <p class="footer-tagline">Evidence first. Unfiltered reality. | Echo Truth Hub © 2026</p>
-            <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;">
-                COC: 51644525 | SimpleLight | The Hague, Netherlands
+            <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem;">
+                Reply on X with #TruthWithTeeth + sources. Best evidence (by community likes) wins 35% of pot. Min 10 entries required.
             </p>
         </div>
-    </footer>
 
-    <!-- X Widget Script -->
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <!-- X Timeline Section -->
+        <div class="sidebar-section">
+            <h3>📢 Live from X</h3>
+            <div class="x-timeline">
+                <!-- X Timeline Embed -->
+                <a class="twitter-timeline" 
+                   data-height="600" 
+                   data-theme="light" 
+                   data-chrome="noheader nofooter noborders"
+                   href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">
+                   Tweets by EchoTruthHub
+                </a>
+            </div>
+        </div>
 
-    <!-- Enhanced Category Filter Script -->
-    <script>
-        document.querySelectorAll('.category-tag').forEach(tag => {
-            tag.addEventListener('click', (e) => {
-                e.preventDefault();
-                document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
-                tag.classList.add('active');
-                
-                const cat = tag.dataset.cat;
-                document.querySelectorAll('.filterable-article').forEach(article => {
-                    if (cat === 'all' || article.dataset.cat === cat) {
-                        article.style.display = '';
-                    } else {
-                        article.style.display = 'none';
-                    }
-                });
-            });
+        <!-- Call to Action -->
+        <div class="sidebar-section" style="background: var(--secondary-bg); text-align: center;">
+            <h3>Join the Hunt</h3>
+            <p style="margin-bottom: 1rem; font-size: 0.95rem;">
+                Think you can prove or disprove the claim? Enter the bounty and let the evidence speak.
+            </p>
+            <a href="index.html#ready-to-play" style="display: inline-block; padding: 0.75rem 1.5rem; background: var(--accent-primary); color: white; text-decoration: none; border-radius: 6px; font-weight: 600; transition: transform 0.2s;">
+                How It Works →
+            </a>
+        </div>
+    </aside>
+</div>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="blog.html">Commentary</a>
+            <a href="myths.html">Archive</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="tnc.html">Terms</a>
+            <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a>
+        </div>
+        <p class="footer-tagline">Evidence first. Unfiltered reality. | Echo Truth Hub © 2026</p>
+        <p style="margin-top: 1rem; font-size: 0.85rem; opacity: 0.7;">
+            COC: 85527513 | SimpleLight | The Hague, Netherlands
+        </p>
+    </div>
+</footer>
+
+<!-- X Timeline Widget Script -->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<!-- Category Filter Script -->
+<script>
+    document.querySelectorAll('.category-tag').forEach(tag => {
+        tag.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.querySelectorAll('.category-tag').forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+            // In production: filter articles by category
+            console.log('Filter by:', tag.textContent);
         });
-    </script>
-</body>
-</html>
+    });
+</script>
