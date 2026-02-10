@@ -49,6 +49,8 @@
         .article-card h3 a:hover {color:#00BFA6;}
         .box {background:rgba(0,191,166,0.1);padding:2em;border-radius:16px;margin:3em 0;border-left:5px solid #00BFA6;}
         .box h2 {color:#FFB800;margin-bottom:1rem;}
+        .box a {color:#fff;text-decoration:none;transition:color 0.2s;}
+        .box a:hover {color:#FFB800;}
         .sidebar {position:sticky;top:100px;height:fit-content;}
         .sidebar-section {background:rgba(0,191,166,0.1);padding:2.5em;border-radius:16px;margin-bottom:3rem;border-left:5px solid #00BFA6;}
         .sidebar-section h3 {font-size:2em;color:#FFB800;text-align:center;margin-bottom:1rem;}
@@ -63,23 +65,49 @@
         footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
         footer a:hover {color:#FFB800;}
 
-        /* Share & Download Actions */
-        .article-actions {display:flex;gap:12px;margin:24px 0;padding:16px;background:rgba(0,191,166,0.1);border-radius:12px;flex-wrap:wrap;border:1px solid rgba(0,191,166,0.2);}
-        .action-btn {display:inline-flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,191,166,0.15);border:1px solid rgba(0,191,166,0.3);border-radius:8px;color:#00BFA6;text-decoration:none;font-size:14px;font-weight:600;transition:all 0.2s;cursor:pointer;}
-        .action-btn:hover {background:#00BFA6;color:#0A0F14;border-color:#00BFA6;transform:translateY(-2px);}
-        .action-btn i {font-size:16px;}
-
-        /* Sticky Share Bar */
-        .sticky-share {position:fixed;left:20px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;opacity:0;transition:opacity 0.3s;z-index:1000;pointer-events:none;}
-        .sticky-share.visible {opacity:1;pointer-events:auto;}
-        .sticky-share .action-btn {width:48px;height:48px;padding:0;justify-content:center;border-radius:50%;background:rgba(0,191,166,0.2);backdrop-filter:blur(10px);}
-        .sticky-share .action-btn span {display:none;}
+        /* Share & Download Actions at bottom */
+        .article-actions {
+            display:flex;
+            gap:12px;
+            margin:32px 0;
+            padding:0;
+            flex-wrap:wrap;
+            justify-content:center;
+        }
+        .action-btn {
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            padding:12px 20px;
+            background:transparent;
+            border:2px solid rgba(0,191,166,0.4);
+            border-radius:8px;
+            color:#fff;
+            text-decoration:none;
+            font-size:14px;
+            font-weight:600;
+            transition:all 0.2s;
+            cursor:pointer;
+        }
+        .action-btn:hover {
+            background:rgba(0,191,166,0.1);
+            border-color:#00BFA6;
+            transform:translateY(-2px);
+        }
+        .action-btn i {
+            font-size:16px;
+            color:#00BFA6;
+        }
 
         @media (max-width:1024px) {
             .main-wrapper {grid-template-columns:1fr;gap:3rem;}
             .sidebar {position:static;order:-1;}
-            .sticky-share {left:10px;}
-            .sticky-share .action-btn {width:40px;height:40px;}
+        }
+        
+        @media (max-width:640px) {
+            .article-actions {gap:10px;padding:16px;}
+            .action-btn {padding:10px 14px;font-size:13px;}
+            .action-btn i {font-size:16px;}
         }
     </style>
 </head>
@@ -118,54 +146,14 @@
         </div>
     </section>
 
-    <!-- Sticky Share Bar (appears on scroll) -->
-    <div class="sticky-share" id="stickyShare">
-        <button class="action-btn" onclick="downloadArticle()" title="Download PDF">
-            <i class="fas fa-download"></i>
-            <span>Download</span>
-        </button>
-        <button class="action-btn" onclick="shareArticle('twitter')" title="Share on X">
-            <i class="fab fa-x-twitter"></i>
-            <span>X</span>
-        </button>
-        <button class="action-btn" onclick="copyLink()" title="Copy Link">
-            <i class="fas fa-link"></i>
-            <span>Link</span>
-        </button>
-    </div>
-
     <div class="main-wrapper">
         <main class="main-content">
-            <article class="featured-article" data-category="investigation">
+            <article class="featured-article" data-category="investigation" id="mainArticle">
                 <div class="featured-image" style="background-image: url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
-                <div class="featured-content">
+                <div class="featured-content" id="articleContent">
                     <span class="featured-category">Investigation</span>
                     <h2>The Biometric Dilemma: Why Iris Scans Won't Solve the Bot Problem</h2>
                     <p><strong>Investigative Commentary | Echo Truth Hub | February 3, 2026</strong></p>
-
-                    <!-- Share/Download Actions -->
-                    <div class="article-actions">
-                        <button class="action-btn" onclick="downloadArticle()">
-                            <i class="fas fa-download"></i>
-                            <span>Download PDF</span>
-                        </button>
-                        <button class="action-btn" onclick="shareArticle('twitter')">
-                            <i class="fab fa-x-twitter"></i>
-                            <span>Share on X</span>
-                        </button>
-                        <button class="action-btn" onclick="shareArticle('linkedin')">
-                            <i class="fab fa-linkedin"></i>
-                            <span>Share on LinkedIn</span>
-                        </button>
-                        <button class="action-btn" onclick="copyLink()">
-                            <i class="fas fa-link"></i>
-                            <span>Copy Link</span>
-                        </button>
-                        <button class="action-btn" onclick="shareArticle('email')">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email</span>
-                        </button>
-                    </div>
 
                     <p>Rumors circulating in technology circles suggest OpenAI is exploring a new social platform designed exclusively for verified humans with automated accounts excluded. One reported concept involves biometric verification that could require iris scans using the World Orb or device-based systems such as Apple's Face ID.</p>
                     <p>The proposal addresses a genuine and growing problem. Automated bots increasingly distort online conversations, manipulate engagement, and undermine trust across digital platforms.</p>
@@ -196,6 +184,34 @@
                             <li><a href="https://transparency.x.com/en/reports" target="_blank">X Transparency and Enforcement Disclosures (2025)</a></li>
                         </ul>
                     </div>
+
+                    <!-- Share/Download Actions at Bottom -->
+                    <div class="article-actions">
+                        <button class="action-btn" onclick="downloadArticle()">
+                            <i class="fas fa-file-pdf"></i>
+                            <span>Download PDF</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('twitter')">
+                            <i class="fab fa-x-twitter"></i>
+                            <span>Share on X</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('linkedin')">
+                            <i class="fab fa-linkedin"></i>
+                            <span>LinkedIn</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('reddit')">
+                            <i class="fab fa-reddit"></i>
+                            <span>Reddit</span>
+                        </button>
+                        <button class="action-btn" onclick="copyLink()">
+                            <i class="fas fa-link"></i>
+                            <span>Copy Link</span>
+                        </button>
+                        <button class="action-btn" onclick="shareArticle('email')">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </button>
+                    </div>
                 </div>
             </article>
 
@@ -206,15 +222,15 @@
 
         <aside class="sidebar">
             <div class="sidebar-section">
-                <h3>🎯 Current Bounty Status</h3>
-                <div class="bounty-card" id="bounty-container"></div>
-            </div>
-
-            <div class="sidebar-section">
-                <h3>📢 Live from X <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Twitter_new_X_logo.svg/1024px-Twitter_new_X_logo.svg.png" alt="X logo" class="x-logo"></h3>
+                <h3>📢 Live from X <img src="X_logo.svg" alt="X logo" class="x-logo"></h3>
                 <div style="border-radius:16px;overflow:hidden;">
                     <a class="twitter-timeline" data-height="800" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/EchoTruthHub?ref_src=twsrc%5Etfw">Tweets by EchoTruthHub</a>
                 </div>
+            </div>
+
+            <div class="sidebar-section">
+                <h3>🎯 Current Bounty Status</h3>
+                <div class="bounty-card" id="bounty-container"></div>
             </div>
         </aside>
     </div>
@@ -226,7 +242,8 @@
 
     <!-- Scripts -->
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     
     <script>
         // Bounty Configuration
@@ -261,7 +278,7 @@
                 </div>
                 <a href="${ACTIVE_BOUNTY.entryLink}" class="bounty-btn" target="_blank">Enter Bounty (€1.21)</a>
                 <div style="text-align:center;">
-                    <img src="https://www.mollie.com/images/payments/mollie-payments-badge.svg" alt="Powered by Mollie" class="mollie-badge">
+                    <img src="mollie-badge.png" alt="Powered by Mollie" class="mollie-badge">
                 </div>
                 <p style="margin-top:1.5rem;font-size:0.85rem;opacity:0.8;">
                     Reply on X with #TruthWithTeeth + sources. Best evidence wins 35% of pot.
@@ -288,37 +305,88 @@
             setInterval(update, 60000);
         }
 
-        // Sticky Share Bar Visibility
-        window.addEventListener('scroll', function() {
-            const stickyShare = document.getElementById('stickyShare');
-            if (window.scrollY > 400) {
-                stickyShare.classList.add('visible');
-            } else {
-                stickyShare.classList.remove('visible');
+        // IMPROVED PDF Generation - Proper document export
+        async function downloadArticle() {
+            const { jsPDF } = window.jspdf;
+            
+            // Show loading indicator
+            const btn = event?.target?.closest('.action-btn');
+            if (btn) {
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span>Generating...</span>';
+                btn.disabled = true;
             }
-        });
-
-        // Download Article as PDF
-        function downloadArticle() {
-            const element = document.querySelector('.featured-content');
-            const title = document.querySelector('.featured-content h2').textContent.trim();
-            const filename = title.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.pdf';
             
-            const opt = {
-                margin: 15,
-                filename: filename,
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-            };
-            
-            html2pdf().set(opt).from(element).save();
+            try {
+                const content = document.getElementById('articleContent');
+                const title = document.querySelector('.featured-content h2').textContent.trim();
+                const filename = title.toLowerCase().replace(/[^a-z0-9]+/g, '-') + '.pdf';
+                
+                // Capture content with better quality
+                const canvas = await html2canvas(content, {
+                    scale: 2,
+                    useCORS: true,
+                    logging: false,
+                    backgroundColor: '#0A0F14'
+                });
+                
+                const imgData = canvas.toDataURL('image/png');
+                const pdf = new jsPDF({
+                    orientation: 'portrait',
+                    unit: 'mm',
+                    format: 'a4'
+                });
+                
+                const imgWidth = 210; // A4 width in mm
+                const pageHeight = 297; // A4 height in mm
+                const imgHeight = (canvas.height * imgWidth) / canvas.width;
+                let heightLeft = imgHeight;
+                let position = 0;
+                
+                // Add first page
+                pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+                
+                // Add additional pages if needed
+                while (heightLeft > 0) {
+                    position = heightLeft - imgHeight;
+                    pdf.addPage();
+                    pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+                    heightLeft -= pageHeight;
+                }
+                
+                // Save the PDF
+                pdf.save(filename);
+                
+                // Reset button
+                if (btn) {
+                    btn.innerHTML = '<i class="fas fa-check"></i><span>Downloaded!</span>';
+                    btn.style.background = '#00BFA6';
+                    btn.style.color = '#0A0F14';
+                    setTimeout(() => {
+                        btn.innerHTML = originalHTML;
+                        btn.style.background = '';
+                        btn.style.color = '';
+                        btn.disabled = false;
+                    }, 2000);
+                }
+            } catch (error) {
+                console.error('PDF generation error:', error);
+                if (btn) {
+                    btn.innerHTML = '<i class="fas fa-times"></i><span>Error</span>';
+                    setTimeout(() => {
+                        btn.innerHTML = '<i class="fas fa-file-pdf"></i><span>Download PDF</span>';
+                        btn.disabled = false;
+                    }, 2000);
+                }
+            }
         }
 
-        // Share Article
+        // Share Article - EXPANDED PLATFORMS
         function shareArticle(platform) {
             const url = encodeURIComponent(window.location.href);
             const title = encodeURIComponent(document.querySelector('.featured-content h2').textContent);
+            const description = encodeURIComponent('Investigative Commentary from Echo Truth Hub - Where facts meet scrutiny');
             const hashtags = 'TruthWithTeeth,EchoTruthHub';
             
             let shareUrl;
@@ -330,8 +398,17 @@
                 case 'linkedin':
                     shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
                     break;
+                case 'facebook':
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                    break;
+                case 'reddit':
+                    shareUrl = `https://reddit.com/submit?url=${url}&title=${title}`;
+                    break;
+                case 'whatsapp':
+                    shareUrl = `https://wa.me/?text=${title}%20${url}`;
+                    break;
                 case 'email':
-                    shareUrl = `mailto:?subject=${title}&body=Check out this article: ${url}`;
+                    shareUrl = `mailto:?subject=${title}&body=${description}%0A%0A${url}`;
                     break;
             }
             
@@ -348,10 +425,12 @@
                 btn.innerHTML = '<i class="fas fa-check"></i><span>Copied!</span>';
                 btn.style.background = '#00BFA6';
                 btn.style.color = '#0A0F14';
+                btn.style.borderColor = '#00BFA6';
                 setTimeout(() => {
                     btn.innerHTML = originalHTML;
                     btn.style.background = '';
                     btn.style.color = '';
+                    btn.style.borderColor = '';
                 }, 2000);
             });
         }
