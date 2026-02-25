@@ -52,12 +52,12 @@
         footer a:hover {color:#FFB800;}
         /* === Animated header overlay for Algorithm article card === */
         @keyframes rain {
-            0%   { background-position: 0 0; }
+            0% { background-position: 0 0; }
             100% { background-position: 0 2000px; }
         }
         @keyframes pulse-swarm {
             0%, 100% { opacity: 0.4; transform: scale(1); }
-            50%       { opacity: 0.8; transform: scale(1.08); }
+            50% { opacity: 0.8; transform: scale(1.08); }
         }
         .code-rain {
             position: absolute; inset: 0;
@@ -83,7 +83,6 @@
             pointer-events: none;
         }
         .featured-image { position: relative; overflow: hidden; }
-
         @media (max-width:1024px) {
             .main-wrapper {grid-template-columns:1fr;gap:3rem;padding-top:0;}
             .sidebar {position:static;display:flex;flex-direction:column;}
@@ -121,12 +120,10 @@
             </nav>
         </div>
     </header>
-
     <section class="hero">
         <h1>Investigative Commentaries</h1>
         <p>Deep dives into claims, evidence, and truth. Where facts meet scrutiny.</p>
     </section>
-
     <section class="category-filter">
         <div class="filter-container">
             <span class="filter-label">Filter by:</span>
@@ -140,13 +137,10 @@
             <a href="#" class="category-tag" data-category="evidence">Evidence-Based</a>
         </div>
     </section>
-
     <div class="sticky-bounty-mobile" id="sticky-bounty-mobile"></div>
-
     <div class="main-wrapper">
         <main class="main-content">
-
-            <!-- ARTICLE 0: Algorithm Ate Your Tribe — Feb 25, 2026 — 12 min read -->
+            <!-- ARTICLE 0: Algorithm Ate Your Tribe , Feb 25, 2026 , 12 min read -->
             <article class="featured-article" data-category="evidence">
                 <div class="featured-image" style="background-image:url('tribe-swarm-static.jpg');background-color:#000;">
                     <div class="code-rain"></div>
@@ -160,12 +154,11 @@
                     </div>
                     <h2>The Algorithm That Ate Your Tribe</h2>
                     <p><strong>February 25, 2026</strong></p>
-                    <p>A 2024 EEG study, 98,000 data points, two primates, one inconvenient number — 150 — and a courtroom in Los Angeles where Zuckerberg testified under oath this month. How algorithmic social media is systematically dismantling the human social architecture it was built to exploit. And what the organism is doing about it.</p>
+                    <p>A 2024 EEG study, 98,000 data points, two primates, one inconvenient number, 150, and a courtroom in Los Angeles where Zuckerberg testified under oath this month. How algorithmic social media is systematically dismantling the human social architecture it was built to exploit. And what the organism is doing about it.</p>
                     <a href="/algorithm-ate-your-tribe.html" class="read-btn">Read Full Article →</a>
                 </div>
             </article>
-
-            <!-- ARTICLE 1: Odido Breach — Feb 24, 2026 — 10 min read -->
+            <!-- ARTICLE 1: Odido Breach , Feb 24, 2026 , 10 min read -->
             <article class="featured-article" data-category="investigation">
                 <div class="featured-image" style="background-image:url('IMG_6321.png');background-color:#04080b;background-position:center top;"></div>
                 <div class="featured-content">
@@ -175,12 +168,11 @@
                     </div>
                     <h2>The Open Door. What the Odido Breach Tells Us About Cyber Complacency.</h2>
                     <p><strong>February 24, 2026</strong></p>
-                    <p>Odido's breach wasn't a sophisticated attack — it was an open door. Voice phishing into Salesforce CRM let ShinyHunters walk out with 21 million records including IBANs, passports, and plaintext verification codes. What this tells us about compliance gaps and who is next.</p>
+                    <p>Odido's breach wasn't a sophisticated attack, it was an open door. Voice phishing into Salesforce CRM let ShinyHunters walk out with 21 million records including IBANs, passports, and plaintext verification codes. What this tells us about compliance gaps and who is next.</p>
                     <a href="/odido-compliance.html" class="read-btn">Read Full Article →</a>
                 </div>
             </article>
-
-            <!-- ARTICLE 2: Errored — Feb 2026 — 5 min read -->
+            <!-- ARTICLE 2: Errored , Feb 2026 , 5 min read -->
             <article class="featured-article" data-category="language">
                 <div class="featured-image" style="background-image:url('errored-hero.jpg');background-color:#0d1a16;"></div>
                 <div class="featured-content">
@@ -194,8 +186,7 @@
                     <a href="/errored.html" class="read-btn">Read Full Article →</a>
                 </div>
             </article>
-
-            <!-- ARTICLE 3: Biometric — Feb 3, 2026 — 8 min read -->
+            <!-- ARTICLE 3: Biometric , Feb 3, 2026 , 8 min read -->
             <article class="featured-article" data-category="investigation">
                 <div class="featured-image" style="background-image:url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
                 <div class="featured-content">
@@ -209,9 +200,7 @@
                     <a href="/biometric.html" class="read-btn">Read Full Article →</a>
                 </div>
             </article>
-
         </main>
-
         <aside class="sidebar">
             <div class="sidebar-section">
                 <h3>🎯 Current Bounty Status</h3>
@@ -227,12 +216,10 @@
             </div>
         </aside>
     </div>
-
     <footer>
         <p>Echo Truth Hub © 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
         <p><a href="/">Home</a> • <a href="/blog.html">Commentary</a> • <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
     </footer>
-
     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <script>
         const ACTIVE_BOUNTY = {
@@ -247,7 +234,6 @@
             endDate: new Date('2026-02-18T23:59:59'),
             entryLink: 'https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk'
         };
-
         function updateBountyDisplay() {
             const container = document.getElementById('bounty-container');
             const mobileContainer = document.getElementById('sticky-bounty-mobile');
@@ -287,7 +273,6 @@
             }
             if (ACTIVE_BOUNTY.endDate) startCountdown(ACTIVE_BOUNTY.endDate);
         }
-
         function startCountdown(endDate) {
             const timerEl = document.getElementById('timer');
             const timerMobileEl = document.getElementById('timer-mobile');
@@ -300,7 +285,6 @@
             }
             update(); setInterval(update, 60000);
         }
-
         document.addEventListener('DOMContentLoaded', () => {
             updateBountyDisplay();
             const tags = document.querySelectorAll('.category-tag');
