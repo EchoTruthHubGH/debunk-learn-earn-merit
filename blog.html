@@ -27,8 +27,10 @@
         .main-wrapper {max-width:1400px;margin:0 auto;padding:3rem 20px;display:grid;grid-template-columns:1fr 400px;gap:4rem;}
         .featured-article {margin-bottom:4rem;border-radius:16px;overflow:hidden;background:rgba(0,191,166,0.05);border:1px solid rgba(0,191,166,0.2);transition:transform 0.3s,box-shadow 0.3s;}
         .featured-article:hover {transform:translateY(-4px);box-shadow:0 10px 30px rgba(0,191,166,0.2);}
-        .featured-image {width:100%;height:400px;background-size:cover;background-position:center;background-repeat:no-repeat;position:relative;overflow:hidden;}
+        .featured-image {width:100%;height:400px;background-size:cover;background-position:center;background-repeat:no-repeat;}
         .featured-content {padding:2.5rem;}
+        .featured-content h2 {font-size:2.2rem;font-weight:700;margin:0 0 1rem;line-height:1.2;color:#FFB800;}
+        .featured-content p {margin-bottom:1.2em;color:rgba(255,255,255,0.85);line-height:1.7;}
         .card-meta {display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
         .featured-category {display:inline-block;padding:0.4rem 0.8rem;border-radius:4px;font-size:0.8rem;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;background:#FFB800;color:#0A0F14;}
         .read-time-badge {display:inline-flex;align-items:center;gap:0.35rem;font-size:0.78rem;color:rgba(255,255,255,0.5);font-family:monospace;}
@@ -48,30 +50,27 @@
         footer {margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;border-top:1px solid rgba(0,191,166,0.2);padding-top:3rem;}
         footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
         footer a:hover {color:#FFB800;}
-
-        /* === Animated header effect for "The Algorithm That Ate Your Tribe" === */
+        /* === Animated header overlay for Algorithm article card === */
         @keyframes rain {
-            0% { background-position: 0 0; }
+            0%   { background-position: 0 0; }
             100% { background-position: 0 2000px; }
         }
         @keyframes pulse-swarm {
             0%, 100% { opacity: 0.4; transform: scale(1); }
-            50%      { opacity: 0.8; transform: scale(1.08); }
+            50%       { opacity: 0.8; transform: scale(1.08); }
         }
         .code-rain {
-            position: absolute;
-            inset: 0;
-            background-image: 
+            position: absolute; inset: 0;
+            background-image:
                 repeating-linear-gradient(0deg, transparent, transparent 2px, #0f0 2px, #0f0 4px),
                 repeating-linear-gradient(90deg, transparent, transparent 2px, #0f0 2px, #0f0 4px);
             background-size: 100% 100px;
             animation: rain 20s linear infinite;
-            opacity: 0.7;
+            opacity: 0.07;
             pointer-events: none;
         }
         .swarm-motion {
-            position: absolute;
-            inset: 0;
+            position: absolute; inset: 0;
             background: radial-gradient(circle at 30% 40%, rgba(200,0,0,0.15), transparent 70%),
                         radial-gradient(circle at 70% 60%, rgba(200,0,0,0.12), transparent 70%);
             animation: pulse-swarm 12s ease-in-out infinite;
@@ -79,11 +78,11 @@
             pointer-events: none;
         }
         .vignette {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.6) 60%, rgba(0,0,0,0.8) 100%);
+            position: absolute; inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.75) 100%);
             pointer-events: none;
         }
+        .featured-image { position: relative; overflow: hidden; }
 
         @media (max-width:1024px) {
             .main-wrapper {grid-template-columns:1fr;gap:3rem;padding-top:0;}
@@ -113,7 +112,7 @@
     <header>
         <div class="header-container">
             <div class="title-block">
-                <a href="/"><div class="logo">Echo Truth Hub</div><div class="tagline">Debunk, Learn & Earn by Merit</div></a>
+                <a href="/"><div class="logo">Echo Truth Hub</div><div class="tagline">Debunk, Learn &amp; Earn by Merit</div></a>
             </div>
             <nav class="nav">
                 <a href="/">Home</a>
@@ -147,12 +146,9 @@
     <div class="main-wrapper">
         <main class="main-content">
 
-            <!-- ARTICLE 0: Algorithm Ate Your Tribe — with animated header -->
+            <!-- ARTICLE 0: Algorithm Ate Your Tribe — Feb 25, 2026 — 12 min read -->
             <article class="featured-article" data-category="evidence">
-                <div class="featured-image" style="
-                    background: url('tribe-swarm-static.jpg') center/cover no-repeat;
-                    background-color: #000;
-                ">
+                <div class="featured-image" style="background-image:url('IMG_6415.jpeg');background-color:#000;">
                     <div class="code-rain"></div>
                     <div class="swarm-motion"></div>
                     <div class="vignette"></div>
@@ -164,12 +160,12 @@
                     </div>
                     <h2>The Algorithm That Ate Your Tribe</h2>
                     <p><strong>February 25, 2026</strong></p>
-                    <p>A 2024 EEG study, 98,000 data points, two primates, one inconvenient number , 150 , and a courtroom in Los Angeles where Zuckerberg testified under oath this month. How algorithmic social media is systematically dismantling the human social architecture it was built to exploit. And what the organism is doing about it.</p>
+                    <p>A 2024 EEG study, 98,000 data points, two primates, one inconvenient number — 150 — and a courtroom in Los Angeles where Zuckerberg testified under oath this month. How algorithmic social media is systematically dismantling the human social architecture it was built to exploit. And what the organism is doing about it.</p>
                     <a href="/algorithm-ate-your-tribe.html" class="read-btn">Read Full Article →</a>
                 </div>
             </article>
 
-            <!-- ARTICLE 1: Odido Breach -->
+            <!-- ARTICLE 1: Odido Breach — Feb 24, 2026 — 10 min read -->
             <article class="featured-article" data-category="investigation">
                 <div class="featured-image" style="background-image:url('IMG_6321.png');background-color:#04080b;background-position:center top;"></div>
                 <div class="featured-content">
@@ -179,17 +175,17 @@
                     </div>
                     <h2>The Open Door. What the Odido Breach Tells Us About Cyber Complacency.</h2>
                     <p><strong>February 24, 2026</strong></p>
-                    <p>Odido's breach wasn't a sophisticated attack , it was an open door. Voice phishing into Salesforce CRM let ShinyHunters walk out with 21 million records including IBANs, passports, and plaintext verification codes. What this tells us about compliance gaps and who is next.</p>
+                    <p>Odido's breach wasn't a sophisticated attack — it was an open door. Voice phishing into Salesforce CRM let ShinyHunters walk out with 21 million records including IBANs, passports, and plaintext verification codes. What this tells us about compliance gaps and who is next.</p>
                     <a href="/odido-compliance.html" class="read-btn">Read Full Article →</a>
                 </div>
             </article>
 
-            <!-- ARTICLE 2: Errored -->
+            <!-- ARTICLE 2: Errored — Feb 2026 — 5 min read -->
             <article class="featured-article" data-category="language">
                 <div class="featured-image" style="background-image:url('errored-hero.jpg');background-color:#0d1a16;"></div>
                 <div class="featured-content">
                     <div class="card-meta">
-                        <span class="featured-category">Language & Evidence</span>
+                        <span class="featured-category">Language &amp; Evidence</span>
                         <span class="read-time-badge"><i class="far fa-clock"></i> 5 min read</span>
                     </div>
                     <h2>Errored. A Word That Wasn't. Until It Was.</h2>
@@ -199,7 +195,7 @@
                 </div>
             </article>
 
-            <!-- ARTICLE 3: Biometric -->
+            <!-- ARTICLE 3: Biometric — Feb 3, 2026 — 8 min read -->
             <article class="featured-article" data-category="investigation">
                 <div class="featured-image" style="background-image:url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
                 <div class="featured-content">
