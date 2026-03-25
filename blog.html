@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -51,6 +52,7 @@
         footer {margin:140px 0 60px;text-align:center;color:#888;font-size:0.95em;border-top:1px solid rgba(0,191,166,0.2);padding-top:3rem;}
         footer a {color:#00BFA6;margin:0 1rem;text-decoration:none;}
         footer a:hover {color:#FFB800;}
+
     /* ============================================================
        ARTICLE CARD: Algorithm Ate Your Tribe
     ============================================================ */
@@ -85,13 +87,14 @@
         background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.5) 60%, rgba(0,0,0,0.75) 100%);
         pointer-events: none;
     }
+
     /* ============================================================
        WIRED CARD: Shatter / glass flicker effect
     ============================================================ */
     @keyframes glassFlickerCard {
         0%,100% { opacity:1; }
-        7% { opacity:0.88; }
-        8% { opacity:1; }
+        7%  { opacity:0.88; }
+        8%  { opacity:1; }
         45% { opacity:1; }
         46% { opacity:0.93; }
         47% { opacity:1; }
@@ -99,6 +102,7 @@
     .wired-card-img {
         animation: glassFlickerCard 8s ease-in-out 1s infinite;
     }
+
     /* ============================================================
        TEASER CARD SYSTEM
     ============================================================ */
@@ -143,9 +147,9 @@
         pointer-events: none;
     }
     @keyframes dust {
-        0% { transform: translateY(0px) translateX(0px); opacity: 0; }
-        10% { opacity: 0.6; }
-        90% { opacity: 0.3; }
+        0%   { transform: translateY(0px) translateX(0px); opacity: 0; }
+        10%  { opacity: 0.6; }
+        90%  { opacity: 0.3; }
         100% { transform: translateY(-80px) translateX(20px); opacity: 0; }
     }
     .teaser-dust {
@@ -160,7 +164,7 @@
         animation: dust 6s ease-in-out infinite;
     }
     .teaser-dust::before { left: 40%; top: 60%; animation-delay: 0s; }
-    .teaser-dust::after { left: 60%; top: 70%; animation-delay: 2.5s; }
+    .teaser-dust::after  { left: 60%; top: 70%; animation-delay: 2.5s; }
     .teaser-vignette {
         position: absolute; inset: 0;
         background: linear-gradient(to bottom,
@@ -262,6 +266,7 @@
         margin: 0;
         font-style: italic;
     }
+
     /* ============================================================
        RESPONSIVE
     ============================================================ */
@@ -290,6 +295,7 @@
         .typewriter-line2 { font-size: 1.2rem; }
     }
 </style>
+
 </head>
 <body>
     <header>
@@ -304,10 +310,12 @@
             </nav>
         </div>
     </header>
+
 <section class="hero">
     <h1>Investigative Commentaries</h1>
     <p>Deep dives into claims, evidence, and truth. Where facts meet scrutiny.</p>
 </section>
+
 <section class="category-filter">
     <div class="filter-container">
         <span class="filter-label">Filter by:</span>
@@ -321,9 +329,12 @@
         <a href="#" class="category-tag" data-category="evidence">Evidence-Based</a>
     </div>
 </section>
+
 <div class="sticky-bounty-mobile" id="sticky-bounty-mobile"></div>
+
 <div class="main-wrapper">
     <main class="main-content" id="articles-container">
+
         <!-- ARTICLE 0: WIRED Standard — NEWEST FIRST -->
         <article class="featured-article" data-category="debunked">
             <div class="featured-image wired-card-img" style="background-image:url('IMG_7366.jpeg');background-color:#04080b;background-position:center top;"></div>
@@ -338,7 +349,9 @@
                 <a href="/wired-standard.html" class="read-btn">Read Full Article →</a>
             </div>
         </article>
+
         <!-- THE DIGITAL HIVE TRILOGY -->
+
         <!-- TRILOGY PART I -->
         <article class="featured-article" data-category="evidence">
             <div class="featured-image" style="background-image:url('tribe-swarm-static.jpg');background-color:#000;">
@@ -358,13 +371,10 @@
                 <a href="/the-algorithm-that-ate-your-tribe.html" class="read-btn">Read Part I →</a>
             </div>
         </article>
-        <!-- TRILOGY PART II — NOW WITH YOUR IMAGE -->
+
+        <!-- TRILOGY PART II -->
         <article class="featured-article" data-category="evidence">
-            <div class="featured-image" style="background-image:url('tribe-swarm-static-2.jpg');background-color:#000;">
-                <div class="code-rain"></div>
-                <div class="swarm-motion"></div>
-                <div class="vignette"></div>
-            </div>
+            <div class="featured-image" style="background-image:url('tribe-swarm-static-2.jpg');background-color:#000;"></div>
             <div class="featured-content">
                 <div class="card-meta">
                     <span class="featured-category">Evidence-Based</span>
@@ -374,9 +384,10 @@
                 <h2>The Swarm, The Counterfeit Tribe</h2>
                 <p><strong>February 2026</strong></p>
                 <p>The counterfeit tribe. What the machine does once it has your attention, what the unfinished adolescent brain makes you to it, and what the internal Meta documents prove the architects knew.</p>
-                <a href="the-swarm-the-counterfeit-tribe.html" class="read-btn">Read Part II →</a>
+                <a href="/the-swarm-the-counterfeit-tribe.html" class="read-btn">Read Part II →</a>
             </div>
         </article>
+
         <!-- TRILOGY PART III — COMING SOON -->
         <article class="featured-article" data-category="evidence" style="opacity:0.6;pointer-events:none;">
             <div class="featured-image" style="background-color:#0d1a16;display:flex;align-items:center;justify-content:center;">
@@ -394,6 +405,7 @@
                 <span class="read-btn" style="background:rgba(255,255,255,0.1);cursor:default;">Coming Soon</span>
             </div>
         </article>
+
         <!-- ARTICLE 2: Odido Breach -->
         <article class="featured-article" data-category="investigation">
             <div class="featured-image" style="background-image:url('IMG_6321.png');background-color:#04080b;background-position:center top;"></div>
@@ -408,6 +420,7 @@
                 <a href="/odido-compliance.html" class="read-btn">Read Full Article →</a>
             </div>
         </article>
+
         <!-- ARTICLE 3: Errored -->
         <article class="featured-article" data-category="language">
             <div class="featured-image" style="background-image:url('errored-hero.jpg');background-color:#0d1a16;"></div>
@@ -422,6 +435,7 @@
                 <a href="/errored.html" class="read-btn">Read Full Article →</a>
             </div>
         </article>
+
         <!-- ARTICLE 4: Biometric -->
         <article class="featured-article" data-category="investigation">
             <div class="featured-image" style="background-image:url('https://prismic-io.s3.amazonaws.com/worldcoin-company-website/706d4b93-4ee4-4bf9-b035-c709813b7058_opening-orb-look-inside-worldcoin-biometric-imaging-device-1.jpg');"></div>
@@ -436,6 +450,7 @@
                 <a href="/biometric.html" class="read-btn">Read Full Article →</a>
             </div>
         </article>
+
         <!-- TEASER CARDS -->
         <article class="teaser-article" data-category="investigation">
             <div class="teaser-image-wrap">
@@ -456,6 +471,7 @@
                 <p>EU Digital ID · eIDAS 2.0 · CBDC · Institutional Track Record</p>
             </div>
         </article>
+
         <article class="teaser-article" data-category="investigation">
             <div class="teaser-image-wrap">
                 <div class="teaser-bg" style="background-image:url('eth-teaser-light-table-base.png');"></div>
@@ -475,7 +491,9 @@
                 <p>Privatisation · GDPR as Paper Tiger · The Revolving Door</p>
             </div>
         </article>
+
     </main>
+
     <aside class="sidebar">
         <div class="sidebar-section">
             <h3>🎯 Current Bounty Status</h3>
@@ -491,13 +509,16 @@
         </div>
     </aside>
 </div>
+
 <footer>
     <p>Echo Truth Hub &copy; 2026 | COC: 51644525 | SimpleLight | The Hague, Netherlands</p>
     <p><a href="/">Home</a> &bull; <a href="/blog.html">Commentary</a> &bull; <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a></p>
 </footer>
+
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script>
     const ETH_TEASER_BASE = 'eth-teaser-light-table-base.png';
+
     const ACTIVE_BOUNTY = {
         active: true,
         code: 'M0009',
@@ -510,6 +531,7 @@
         endDate: new Date('2026-02-18T23:59:59'),
         entryLink: 'https://payment-links.mollie.com/payment/j5qNe8Gyg3B3ZiEyqcKZk'
     };
+
     function updateBountyDisplay() {
         const container = document.getElementById('bounty-container');
         const mobileContainer = document.getElementById('sticky-bounty-mobile');
@@ -519,7 +541,7 @@
             return;
         }
         const launchDate = ACTIVE_BOUNTY.startDate.toLocaleDateString('en-US', { month:'short', day:'numeric' });
-        const closeDate = ACTIVE_BOUNTY.endDate.toLocaleDateString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit', hour12:false });
+        const closeDate  = ACTIVE_BOUNTY.endDate.toLocaleDateString('en-US', { month:'short', day:'numeric', hour:'numeric', minute:'2-digit', hour12:false });
         if (container) {
             container.innerHTML = `
                 <h4 style="font-size:1.4rem;color:#FFB800;margin-bottom:0.8rem;">${ACTIVE_BOUNTY.code}: ${ACTIVE_BOUNTY.title}</h4>
@@ -549,8 +571,9 @@
         }
         if (ACTIVE_BOUNTY.endDate) startCountdown(ACTIVE_BOUNTY.endDate);
     }
+
     function startCountdown(endDate) {
-        const timerEl = document.getElementById('timer');
+        const timerEl       = document.getElementById('timer');
         const timerMobileEl = document.getElementById('timer-mobile');
         function update() {
             const diff = endDate - new Date();
@@ -559,19 +582,22 @@
                 if (timerMobileEl) timerMobileEl.textContent = '⏱ Ended';
                 return;
             }
-            const days = Math.floor(diff / (1000*60*60*24));
-            const hours = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+            const days    = Math.floor(diff / (1000*60*60*24));
+            const hours   = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
             const minutes = Math.floor((diff % (1000*60*60)) / (1000*60));
-            if (timerEl) timerEl.textContent = `⏱ ${days}d ${hours}h ${minutes}m remaining`;
+            if (timerEl)       timerEl.textContent       = `⏱ ${days}d ${hours}h ${minutes}m remaining`;
             if (timerMobileEl) timerMobileEl.textContent = `⏱ ${days}d ${hours}h`;
         }
         update();
         setInterval(update, 60000);
     }
+
     document.addEventListener('DOMContentLoaded', () => {
         updateBountyDisplay();
-        const tags = document.querySelectorAll('.category-tag');
+
+        const tags   = document.querySelectorAll('.category-tag');
         const getAll = () => document.querySelectorAll('.featured-article, .teaser-article');
+
         tags.forEach(tag => {
             tag.addEventListener('click', e => {
                 e.preventDefault();
@@ -586,5 +612,6 @@
         });
     });
 </script>
+
 </body>
 </html>
