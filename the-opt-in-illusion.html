@@ -8,7 +8,9 @@
 <meta name="description" content="Google scans your photos. Meta trains on your posts. LinkedIn bans a cybersecurity consultant for sharing a Redbook article. The regulatory bodies disagree on jurisdiction. An investigation into the architecture of manufactured consent.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-body {margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;}
+body {margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;overflow-x:hidden;width:100%;max-width:100%;}
+html {overflow-x:hidden;max-width:100%;}
+*, *::before, *::after {box-sizing:border-box;}
 header {padding:2rem 0;text-align:center;border-bottom:1px solid rgba(0,191,166,0.2);}
 .header-container {max-width:1400px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
 .title-block a {text-decoration:none;color:#fff;}
@@ -59,14 +61,18 @@ footer a:hover {color:#FFB800;}
 .action-btn:hover {background:rgba(0,191,166,0.1);border-color:#00BFA6;transform:translateY(-2px);}
 .action-btn i {font-size:16px;color:#00BFA6;}
 .ai-disclosure {font-size:0.8rem;color:rgba(255,255,255,0.35);text-align:center;margin-top:3rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);}
-@media (max-width:1024px) {
-.main-wrapper {grid-template-columns:1fr;gap:3rem;padding-top:0;}
+@media (max-width:1024px), (orientation:portrait) {
+html, body {overflow-x:hidden;width:100%;max-width:100%;}
+.main-wrapper {grid-template-columns:1fr !important;width:100% !important;padding:1.5rem 16px !important;gap:2rem !important;margin:0 auto !important;}
 .sidebar {position:static;display:flex;flex-direction:column;}
-.sticky-bounty-mobile {
-display:block;position:sticky;top:0;z-index:100;
-background:rgba(10,15,20,0.98);backdrop-filter:blur(10px);
-border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.5);
-}
+.featured-image {height:260px;}
+.featured-content {padding:1.5rem;}
+.featured-content h2 {font-size:1.6rem;}
+.category-filter {width:100% !important;overflow:hidden !important;padding:1rem !important;}
+.filter-container {flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+.filter-container::-webkit-scrollbar {display:none;}
+.filter-label, .category-tag {flex-shrink:0;}
+.sticky-bounty-mobile {display:block;position:sticky;top:0;z-index:100;background:rgba(10,15,20,0.98);backdrop-filter:blur(10px);border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0,0,0.5);}
 .sticky-bounty-mobile .bounty-compact {display:flex;align-items:center;justify-content:space-between;gap:12px;}
 .sticky-bounty-mobile .bounty-info {flex:1;min-width:0;}
 .sticky-bounty-mobile .bounty-title {font-size:0.95rem;font-weight:700;color:#FFB800;margin:0 0 4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -75,8 +81,7 @@ border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0
 .x-feed-container {max-height:400px;overflow-y:auto;}
 }
 @media (max-width:640px) {
-.hero h1 {font-size:2.4em;}
-.hero p {font-size:1.4em;}
+.hero h1 {font-size:2.4em;} .hero p {font-size:1.4em;}
 .article-actions {gap:10px;}
 .action-btn {padding:10px 14px;font-size:13px;}
 }
@@ -124,7 +129,7 @@ border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0
 
 ```
   <!-- HERO IMAGE: replace filename with your uploaded maze image -->
-  <div class="featured-image" style="background-image: url('opt-in-illusion-hero2.jpg');"></div>
+  <div class="featured-image" style="background-image: url('opt-in-illusion-hero.jpg');"></div>
 
   <div class="featured-content" id="articleContent">
 
@@ -133,7 +138,7 @@ border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0
     <h2>The Opt-In Illusion</h2>
 
     <p><strong>Investigation | Echo Truth Hub | April 25, 2026</strong></p>
-    <p style="font-size:0.95rem;color:rgba(255,255,255,0.5);margin-top:-0.6rem;">By <span style="color:#00BFA6;font-weight:600;">Mímir Mímisbrunnr</span></p>
+    <p style="font-size:0.95rem;color:rgba(255,255,255,0.5);margin-top:-0.6rem;">By <span style="color:#00BFA6;font-weight:600;">The Measured Observer</span></p>
 
     <p>There is a specific kind of confidence that only institutional language can produce. Google calls it "Personal Intelligence." Meta calls it "legitimate interests." LinkedIn calls it "Professional Community Policies." Governments call it "digital sovereignty." The individual, somewhere at the bottom of this vocabulary stack, calls it Tuesday.</p>
 
@@ -181,7 +186,13 @@ border-bottom:2px solid #00BFA6;padding:12px 16px;box-shadow:0 4px 20px rgba(0,0
 
     <p>A cybersecurity consultant, professionally engaged in advising on digital exposure risks and user vulnerability, was discussing IT security on LinkedIn, specifically about multinational platforms using automated systems to scan user content. To support the point, the account holder referenced a 2016 article from Redbook, a Hearst Digital Media publication syndicated on OprahDaily.com. <em>(Source: redbookmag.com/life/news/a42000/viral-photo-dad-kissing-baby — Brie Schwartz, Deputy Editor OprahDaily.com, January 2016)</em></p>
 
-    <p>The article's title: "This Sweet Photo of a Dad Kissing His Baby Has Left The Internet Entirely Perturbed." The image: a father kissing his baby's chubby neck while the mother plays with the infant's legs. The baby is wearing a "My Aunt Is My BFF" onesie. A family moment of completely mundane tenderness, photographed from an angle the internet found momentarily confusing. Redbook found it wholesome enough to publish and syndicate. LinkedIn's platform found it sufficient grounds for a permanent ban. The platform's own correspondence states verbatim:</p>
+    <p>The article's title: "This Sweet Photo of a Dad Kissing His Baby Has Left The Internet Entirely Perturbed." The image: a father kissing his baby's chubby neck while the mother plays with the infant's legs. The baby is wearing a "My Aunt Is My BFF" onesie. A family moment of completely mundane tenderness, photographed from an angle the internet found momentarily confusing. Redbook found it wholesome enough to publish and syndicate. LinkedIn's platform found it sufficient grounds for a permanent ban. The platform's own correspondence, reproduced below:</p>
+
+    <img src="Opt-In-Illusion - LinkedIn Account Recovery Appeal.png" alt="LinkedIn Account Recovery Appeal — restriction notice, 23 August 2021, redacted">
+    <p class="img-caption">Exhibit 15 — LinkedIn Account Recovery Appeal, 23 August 2021. Account restricted for "sharing inappropriate Pornographic or Sexually Explicit content." Personal identifiers redacted. Full correspondence on file with ETH.</p>
+
+    <img src="Opt-In-Illusion - LinkedIn Account Recovery Appeal II.png" alt="LinkedIn second review — permanent restriction confirmed, 30 August 2021, redacted">
+    <p class="img-caption">Exhibit 11 — LinkedIn second review, 30 August 2021. Permanent restriction upheld. No specific violation identified. Personal identifiers redacted. Full correspondence on file with ETH.</p>
 
     <div class="box" style="border-left-color:#FFB800;margin:1.5rem 0;">
       <p style="color:#FFB800;font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:0.5rem;">Exhibit 15 — LinkedIn Account Recovery Appeal, 22 August 2021 (redacted)</p>
