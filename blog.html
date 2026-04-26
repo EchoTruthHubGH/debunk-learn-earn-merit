@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
@@ -28,6 +29,26 @@
             .filter-container::-webkit-scrollbar {display:none;}
             .filter-label {flex-shrink:0;}
             .category-tag {flex-shrink:0;}
+        }
+        /* Portrait mode fix */
+        @media (max-width:1024px), (orientation:portrait) {
+            html, body {overflow-x:hidden;width:100%;max-width:100%;}
+            .main-wrapper {
+                grid-template-columns:1fr !important;
+                width:100% !important;
+                padding:1.5rem 16px !important;
+                gap:2rem !important;
+                margin:0 auto !important;
+            }
+            .category-filter {
+                width:100% !important;
+                overflow:hidden !important;
+                padding:1rem !important;
+            }
+            .hero {padding:3rem 1rem;}
+            .featured-image {height:260px;}
+            .featured-content {padding:1.5rem;}
+            .teaser-image-wrap {height:280px;}
         }
         .filter-label {font-weight:600;color:#00BFA6;font-size:0.9rem;text-transform:uppercase;letter-spacing:0.5px;}
         .category-tag {padding:0.5rem 1rem;border-radius:20px;border:1px solid rgba(0,191,166,0.3);background:rgba(0,191,166,0.1);color:#00BFA6;font-size:0.9rem;font-weight:500;transition:all 0.2s;cursor:pointer;text-decoration:none;display:inline-block;}
@@ -345,7 +366,7 @@
 
         <!-- ARTICLE: THE OPT-IN ILLUSION — NEWEST -->
         <article class="featured-article" data-category="investigation">
-            <div class="featured-image opt-in-card-img" style="background-image:url('opt-in-illusion-hero.jpg');background-color:#04080b;"></div>
+            <div class="featured-image opt-in-card-img" style="background-image:url('Opt-In-Illusion - LinkedIn Account Recovery Appeal.png');background-color:#04080b;background-position:center top;"></div>
             <div class="featured-content">
                 <div class="card-meta">
                     <span class="featured-category">Investigation</span>
