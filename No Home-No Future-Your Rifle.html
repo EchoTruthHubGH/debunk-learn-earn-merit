@@ -1,448 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>No Home. No Future. Your Rifle. | Echo Truth Hub</title>
-  <meta name="description" content="When a society systematically dismantles resilience, realism, and identity — who do you actually send to the front?" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --bg:#0d0d0d; --bg-card:#141414; --bg-pull:#111111; --border:#2a2a2a;
-      --accent:#c9a84c; --accent-dim:#7a6430; --text:#e8e4dc; --text-muted:#8a8478;
-      --text-dim:#5a5650; --red:#c0392b;
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{font-size:17px;scroll-behavior:smooth}
-    body{background:#0d0d0d;background-color:#0d0d0d;color:#e8e4dc;font-family:'Source Serif 4',Georgia,serif;font-weight:300;line-height:1.75;-webkit-font-smoothing:antialiased}
-    nav{background:#0a0a0a;border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:58px;position:sticky;top:0;z-index:100}
-    .nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.15rem;color:var(--accent);text-decoration:none;letter-spacing:.04em}
-    .nav-links{display:flex;gap:1.6rem}
-    .nav-links a{color:var(--text-muted);text-decoration:none;font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;transition:color .2s}
-    .nav-links a:hover{color:var(--accent)}
-    .article-hero{max-width:820px;margin:0 auto;padding:4.5rem 2rem 2.5rem;border-bottom:1px solid var(--border)}
-    .article-category{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;display:flex;align-items:center;gap:.6rem}
-    .article-category::before{content:'';display:inline-block;width:22px;height:1px;background:var(--accent)}
-    .article-title{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2rem,5vw,3.2rem);line-height:1.12;color:#f0ece2;margin-bottom:1.2rem;letter-spacing:-.01em}
-    .article-subtitle{font-size:1.15rem;color:var(--text-muted);font-style:italic;line-height:1.55;margin-bottom:2rem;font-weight:300}
-    .article-meta{display:flex;flex-wrap:wrap;gap:1.2rem;align-items:center;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--text-dim);letter-spacing:.06em;text-transform:uppercase}
-    .article-meta .author{color:var(--text-muted)}
-    .attribution-banner{max-width:820px;margin:0 auto;padding:1.5rem 2rem;background:var(--bg-pull);border-left:3px solid var(--accent);border-bottom:1px solid var(--border)}
-    .attribution-banner p{font-size:.82rem;color:var(--text-muted);line-height:1.6;font-family:'JetBrains Mono',monospace}
-    .attribution-banner a{color:var(--accent);text-decoration:none}
-    .attribution-banner a:hover{color:#e8c878;text-decoration:underline}
-    .lang-toggle{max-width:820px;margin:0 auto;padding:1rem 2rem;display:flex;justify-content:flex-end;gap:.5rem}
-    .lang-btn{background:transparent;border:1px solid var(--border);color:var(--text-muted);font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .8rem;cursor:pointer;transition:all .2s;border-radius:2px}
-    .lang-btn.active{background:var(--accent);border-color:var(--accent);color:#0d0d0d}
-    .lang-btn:hover:not(.active){border-color:var(--accent);color:var(--accent)}
-    .article-body{max-width:820px;margin:0 auto;padding:2.5rem 2rem 4rem}
-    .lang-section{display:none}
-    .lang-section.active{display:block}
-    .article-body p{margin-bottom:1.6rem;font-size:1.05rem;color:var(--text)}
-    .article-body h2{font-family:'Playfair Display',serif;font-weight:700;font-size:1.5rem;color:#f0ece2;margin:3rem 0 1.2rem;line-height:1.2}
-    .article-body h3{font-family:'Playfair Display',serif;font-weight:700;font-style:italic;font-size:1.15rem;color:var(--accent);margin:2.2rem 0 .8rem}
-    .pull-quote{border-left:3px solid var(--accent);margin:2.5rem 0;padding:1.2rem 1.8rem;background:var(--bg-pull)}
-    .pull-quote p{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem!important;color:#d8d4cc!important;margin:0!important;line-height:1.5}
-    .pull-quote cite{display:block;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--text-dim);margin-top:.7rem;letter-spacing:.06em;font-style:normal}
-    .data-callout{background:var(--bg-card);border:1px solid var(--border);border-top:2px solid var(--accent);margin:2.5rem 0;padding:1.5rem 1.8rem}
-    .data-callout h4{font-family:'JetBrains Mono',monospace;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-    .data-callout ul{list-style:none;padding:0}
-    .data-callout ul li{font-size:.92rem;color:var(--text-muted);padding:.5rem 0 .5rem 1.2rem;border-bottom:1px solid var(--border);position:relative;line-height:1.55}
-    .data-callout ul li::before{content:'▸';color:var(--accent);position:absolute;left:0;font-size:.7rem;top:.6rem}
-    .data-callout ul li:last-child{border-bottom:none}
-    .video-embed{margin:2.5rem 0;background:var(--bg-card);border:1px solid var(--border)}
-    .video-embed iframe{width:100%;aspect-ratio:16/9;display:block;border:none}
-    .video-caption{padding:.7rem 1rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--text-dim);letter-spacing:.06em;border-top:1px solid var(--border)}
-    .video-caption a{color:var(--accent);text-decoration:none}
-    .satire-flag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--red);border:1px solid var(--red);padding:.15rem .5rem;margin-bottom:.4rem;opacity:.8}
-    .image-slot{background:var(--bg-card);border:1px dashed var(--border);margin:2rem 0;padding:1.5rem;text-align:center}
-    .image-slot .slot-label{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--text-dim);letter-spacing:.1em;text-transform:uppercase}
-    .image-slot .slot-name{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--accent);margin-top:.3rem}
-    .closing-questions{border:1px solid var(--border);border-top:2px solid var(--accent-dim);background:var(--bg-pull);margin:3rem 0;padding:1.8rem}
-    .closing-questions h4{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1rem}
-    .closing-questions p{font-size:1rem!important;color:var(--text-muted)!important;margin-bottom:.9rem!important;padding-left:1rem;border-left:2px solid var(--border)}
-    .source-credits{margin-top:3.5rem;padding-top:2rem;border-top:1px solid var(--border)}
-    .source-credits h4{font-family:'JetBrains Mono',monospace;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-dim);margin-bottom:1.2rem}
-    .source-credits p{font-size:.82rem!important;color:var(--text-muted)!important;margin-bottom:.6rem!important;font-family:'JetBrains Mono',monospace}
-    .source-credits a{color:var(--accent);text-decoration:none}
-    .source-credits a:hover{text-decoration:underline;color:#e8c878}
-    .article-tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:.68rem;color:var(--accent);letter-spacing:.06em;margin-top:2rem}
-    footer{background:#0a0a0a;border-top:1px solid var(--border);padding:2rem;text-align:center}
-    footer p{font-family:'JetBrains Mono',monospace;font-size:.65rem;color:var(--text-dim);letter-spacing:.06em}
-    footer a{color:var(--accent);text-decoration:none}
-    @media(max-width:640px){
-      .article-hero{padding:3rem 1.2rem 2rem}
-      .article-body{padding:2rem 1.2rem 3rem}
-      .attribution-banner{padding:1.2rem}
-      .nav-links{display:none}
-      body{background-color:#0d0d0d;color:#e8e4dc}
-      nav{background-color:#0a0a0a}
-      .article-body p{color:#e8e4dc}
-      .article-body h2{color:#f0ece2}
-      .pull-quote{background-color:#111111}
-      .data-callout{background-color:#141414}
-      .closing-questions{background-color:#111111}
-      .attribution-banner{background-color:#111111}
-      footer{background-color:#0a0a0a}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>No Home. No Future. Your Rifle. | Echo Truth Hub</title>
+<meta name="description" content="When a society systematically dismantles resilience, realism, and identity — who do you actually send to the front?">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+body {margin:0;background:#0A0F14;color:#fff;font-family:system-ui,-apple-system,sans-serif;line-height:1.7;overflow-x:hidden;width:100%;max-width:100%;}
+html {overflow-x:hidden;max-width:100%;}
+*, *::before, *::after {box-sizing:border-box;}
+header {padding:2rem 0;text-align:center;border-bottom:1px solid rgba(0,191,166,0.2);}
+.header-container {max-width:1400px;margin:0 auto;padding:0 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;}
+.title-block a {text-decoration:none;color:#fff;}
+.logo {font-size:2rem;font-weight:900;color:#fff;}
+.tagline {font-size:1.2rem;color:#fff;opacity:0.9;margin-top:0.5rem;}
+.nav a {color:#00BFA6;text-decoration:none;margin:0 1rem;font-weight:600;}
+.nav a:hover, .nav a.active {color:#FFB800;}
+.main-wrapper {max-width:1400px;margin:0 auto;padding:3rem 20px;display:grid;grid-template-columns:1fr 400px;gap:4rem;}
+.featured-article {margin-bottom:4rem;border-radius:16px;overflow:hidden;background:rgba(0,191,166,0.05);border:1px solid rgba(0,191,166,0.2);}
+.featured-image {width:100%;height:420px;background-size:cover;background-position:center;background-repeat:no-repeat;}
+.featured-content {padding:2.5rem 2.2rem;}
+.featured-content h1 {font-size:2.5rem;font-weight:900;margin:0 0 1.1rem;line-height:1.15;color:#FFB800;}
+.featured-content h2 {font-size:1.85rem;font-weight:700;margin:2.3rem 0 1.1rem;line-height:1.25;color:#FFB800;}
+.featured-content p {margin-bottom:1.35em;color:rgba(255,255,255,0.88);line-height:1.75;}
+.featured-content img {max-width:100%;height:auto;border-radius:8px;margin:2rem 0 1rem;display:block;box-shadow:0 8px 25px rgba(0,0,0,0.4);}
+.img-caption {font-size:0.82rem;color:#00BFA6;text-align:center;margin-top:-0.8rem;margin-bottom:2rem;font-style:italic;}
+.pull-quote {border-left:5px solid #FFB800;padding:1.1rem 1.6rem;margin:2.2rem 0;font-size:1.2em;font-style:italic;color:rgba(255,255,255,0.92);background:rgba(255,184,0,0.06);border-radius:0 6px 6px 0;}
+.box {background:rgba(0,191,166,0.1);padding:1.8em 1.9em;border-radius:12px;margin:2.4rem 0;border-left:5px solid #00BFA6;}
+.box h3, .box h4 {color:#FFB800;margin-bottom:0.9rem;font-size:1.15rem;}
+.box ul {margin:0.6rem 0 0 1.1rem;color:rgba(255,255,255,0.85);}
+.box ul li {margin-bottom:0.55rem;}
+.box a {color:#00BFA6;text-decoration:none;transition:color 0.2s;}
+.box a:hover {color:#FFB800;}
+.lang-toggle {display:flex;gap:8px;margin:1.5rem 0 2rem;justify-content:flex-end;}
+.lang-btn {padding:6px 16px;border-radius:20px;border:1px solid rgba(255,184,0,0.4);background:transparent;color:rgba(255,255,255,0.6);font-size:0.82rem;font-weight:600;cursor:pointer;transition:all 0.2s;}
+.lang-btn.active {background:#FFB800;color:#0A0F14;border-color:#FFB800;}
+.lang-btn:hover:not(.active) {border-color:#FFB800;color:#FFB800;}
+.lang-section {display:none;}
+.lang-section.active {display:block;}
+.attribution {background:rgba(255,184,0,0.06);border-left:4px solid #FFB800;padding:1.3rem 1.6rem;margin:2rem 0 2.5rem;border-radius:0 6px 6px 0;font-size:0.9rem;color:rgba(255,255,255,0.8);}
+.attribution a {color:#FFB800;}
+.video-embed {margin:2.2rem 0;border-radius:8px;overflow:hidden;border:1px solid rgba(0,191,166,0.2);}
+.video-embed iframe {width:100%;aspect-ratio:16/9;display:block;border:none;}
+.satire-flag {display:inline-block;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:#ff6b6b;border:1px solid #ff6b6b;padding:2px 8px;border-radius:3px;margin-bottom:0.6rem;}
+.closing {background:rgba(0,191,166,0.08);padding:1.8rem 1.9rem;border-radius:12px;margin:2.8rem 0;border-left:4px solid #00BFA6;}
+.closing h4 {color:#FFB800;margin-bottom:1rem;font-size:1.05rem;}
+.closing p {color:rgba(255,255,255,0.85);margin-bottom:0.9rem;padding-left:0.8rem;border-left:2px solid rgba(0,191,166,0.3);}
+.sources {margin-top:3rem;padding-top:1.8rem;border-top:1px solid rgba(0,191,166,0.2);}
+.sources h4 {color:#00BFA6;font-size:0.95rem;margin-bottom:1rem;text-transform:uppercase;letter-spacing:0.5px;}
+.sources ul {font-size:0.85rem;color:rgba(255,255,255,0.7);}
+.sources a {color:#00BFA6;}
+.article-tag {display:inline-block;margin-top:2rem;color:#FFB800;font-weight:700;}
+.article-actions {display:flex;gap:12px;margin:2.5rem 0 1rem;flex-wrap:wrap;}
+.action-btn {display:inline-flex;align-items:center;gap:8px;padding:10px 18px;background:transparent;border:2px solid rgba(0,191,166,0.4);border-radius:8px;color:#fff;text-decoration:none;font-size:0.9rem;font-weight:600;transition:all 0.2s;}
+.action-btn:hover {background:rgba(0,191,166,0.1);border-color:#00BFA6;}
+.sidebar {position:sticky;top:100px;height:fit-content;}
+.sidebar-section {background:rgba(0,191,166,0.1);padding:2.5em;border-radius:16px;margin-bottom:3rem;border-left:5px solid #00BFA6;}
+.sidebar-section h3 {font-size:2em;color:#FFB800;text-align:center;margin-bottom:1rem;}
+.bounty-card {text-align:center;}
+.bounty-btn {display:inline-block;margin-top:1rem;padding:1rem 2rem;background:#00BFA6;color:#0A0F14;text-decoration:none;border-radius:8px;font-weight:700;transition:all 0.2s;}
+.bounty-btn:hover {background:#FFB800;transform:translateY(-2px);}
+footer {margin:80px 0 50px;text-align:center;color:#888;font-size:0.9em;border-top:1px solid rgba(0,191,166,0.2);padding-top:2.5rem;}
+footer a {color:#00BFA6;margin:0 0.8rem;text-decoration:none;}
+footer a:hover {color:#FFB800;}
+@media (max-width:1024px) {
+.main-wrapper {grid-template-columns:1fr !important;gap:2rem !important;padding:1.5rem 16px !important;}
+.sidebar {position:static;}
+}
+</style>
 </head>
 <body>
 
-<nav>
-  <a href="/" class="nav-logo">Echo Truth Hub</a>
-  <div class="nav-links">
-    <a href="/blog.html">Archive</a>
-    <a href="/about.html">About</a>
+<header>
+<div class="header-container">
+  <div class="title-block">
+    <a href="/"><div class="logo">Echo Truth Hub</div><div class="tagline">Debunk, Learn &amp; Earn by Merit</div></a>
   </div>
-</nav>
-
-<header class="article-hero">
-  <div class="article-category">Opinion &amp; Evidence</div>
-  <h1 class="article-title">No Home. No Future.<br>Your Rifle.</h1>
-  <p class="article-subtitle">When a society systematically dismantles resilience, realism, and identity &mdash; who do you actually send to the front?</p>
-  <div class="article-meta">
-    <span class="author">M&iacute;mir M&iacute;misbrunnr</span>
-    <span>|</span>
-    <span>Echo Truth Hub</span>
-    <span>|</span>
-    <span>8 June 2026</span>
-    <span>|</span>
-    <span>Opinion &mdash; Pan-European</span>
-  </div>
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/blog.html" class="active">Commentary</a>
+    <a href="https://x.com/EchoTruthHub" target="_blank">Follow on X</a>
+  </nav>
+</div>
 </header>
 
-<div class="attribution-banner">
-  <p>
-    Drawing from the column <strong>"Geen woning. Geen toekomst. Maar w&eacute;l het front."</strong> by <strong>Max von Kreyfelt</strong> (@MaxVonKreyfelt), independent thinker and opinion maker.<br>
-    Original column: <a href="https://x.com/maxvonkreyfelt/status/2063843215325757664" target="_blank" rel="noopener">x.com/maxvonkreyfelt/status/2063843215325757664</a><br>
-    Title drawn from a comment by Robert M. Van Praag: <a href="https://x.com/robertmvanpraag/status/2063918282457915671" target="_blank" rel="noopener">x.com/robertmvanpraag/status/2063918282457915671</a><br>
-    Max von Kreyfelt: <a href="https://TICQ.nl" target="_blank" rel="noopener">TICQ.nl</a> &nbsp;|&nbsp;
-    <a href="https://max1909.backme.org" target="_blank" rel="noopener">max1909.backme.org</a> &nbsp;|&nbsp;
-    <a href="https://gofund.me/c9f226cde" target="_blank" rel="noopener">gofund.me/c9f226cde</a>
-  </p>
-</div>
+<div class="main-wrapper">
 
-<div class="lang-toggle">
-  <button class="lang-btn active" onclick="switchLang('en')">EN</button>
-  <button class="lang-btn" onclick="switchLang('nl')">NL</button>
-</div>
+<main class="main-content">
 
-<main class="article-body">
+<div class="featured-article">
 
-  <!-- ENGLISH -->
-  <section class="lang-section active" id="lang-en">
+  <div class="featured-image" style="background-image:url('/home/workdir/artifacts/imagine_images/Wan8V.jpg');background-position:center 35%;"></div>
 
-    <p>There is something jarring in how politics speaks to young people. They are told to take responsibility, show solidarity, and defend democracy and the fatherland. At the same time, many reach their mid-thirties still competing for a 22m&sup2; studio at &euro;1,400 a month &mdash; if a door can be found at all. Student debt is routine. Homeownership feels like distant fiction. A stable rental contract has become rarer than a backstage pass at Lowlands.</p>
+  <div class="featured-content">
 
-    <!-- IMG_9075.png: opening visual — young man with sign, column hero image -->
-    <div class="image-slot">
-      <div class="slot-label">Insert image here &mdash; opening visual</div>
-      <div class="slot-name">IMG_9075.png</div>
+    <span class="featured-category" style="background:#ff6b6b;color:#0A0F14;">Opinion &amp; Evidence</span>
+
+    <h1>No Home. No Future.<br>Your Rifle.</h1>
+    <p style="font-size:1.15rem;color:rgba(255,255,255,0.75);margin-top:-0.4rem;margin-bottom:1.6rem;">When a society systematically dismantles resilience, realism, and identity — who do you actually send to the front?</p>
+
+    <p style="font-size:0.92rem;color:rgba(255,255,255,0.55);margin-bottom:1.6rem;">
+      <strong style="color:#FFB800;">8 June 2026</strong> &nbsp;|&nbsp; By <span style="color:#00BFA6;font-weight:600;">Mímir Mímisbrunnr</span> &nbsp;|&nbsp; Pan-European
+    </p>
+
+    <div class="attribution">
+      Drawing from the column <strong>"Geen woning. Geen toekomst. Maar wél het front."</strong> by <strong>Max von Kreyfelt</strong> (@MaxVonKreyfelt).<br>
+      Original: <a href="https://x.com/maxvonkreyfelt/status/2063843215325757664" target="_blank">x.com/maxvonkreyfelt/status/2063843215325757664</a><br>
+      Title from comment by Robert M. Van Praag.
     </div>
 
-    <p>This is the Netherlands in 2026. Yet the same voices that describe housing as "challenging" appear on screen, blood-serious, calling for "resilience," "dienstplicht," "NATO obligations," and readiness to fight for values and territory.</p>
-
-    <div class="pull-quote">
-      <p>Which territory, precisely? The one where entire neighbourhoods are acquired by pension funds and international investment firms while starters face multi-year waits? The one where a working twenty-something on a median income has less financial room to breathe than their parents did on a single salary in 1987?</p>
-      <cite>&mdash; Max von Kreyfelt, "Geen woning. Geen toekomst. Maar w&eacute;l het front." (June 2026)</cite>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="switchLang('en')">EN</button>
+      <button class="lang-btn" onclick="switchLang('nl')">NL</button>
     </div>
 
-    <p>The political elite seems genuinely surprised that the emotional bond between younger generations and their institutions is fraying. As if loyalty is produced by policy documents, QR codes, and flex contracts. As if people are expected to sacrifice out of love for a system that structurally excludes them.</p>
+    <!-- ENGLISH -->
+    <div id="lang-en" class="lang-section active">
 
-    <h2>The Dutch Case in Numbers</h2>
+      <p>There is something jarring in how politics speaks to young people. They are told to take responsibility, show solidarity, and defend democracy and the fatherland. At the same time, many reach their mid-thirties still competing for a 22m² studio at €1,400 a month — if a door can be found at all. Student debt is routine. Homeownership feels like distant fiction. A stable rental contract has become rarer than a backstage pass at Lowlands.</p>
 
-    <!-- IMG_9074.png: "waarden zonder perspectief worden abstracte slogans" section -->
-    <div class="image-slot">
-      <div class="slot-label">Insert image here &mdash; "values without perspective" section</div>
-      <div class="slot-name">IMG_9074.png</div>
-    </div>
+      <img src="/home/workdir/artifacts/imagine_images/Wan8V.jpg" alt="Young European man holding protest sign 'Geen woning. Geen toekomst.'">
+      <p class="img-caption">Opening visual — the lived reality behind the column.</p>
 
-    <p>Von Kreyfelt's column delivers the diagnosis in plain Dutch. ETH adds the receipts.</p>
+      <p>This is the Netherlands in 2026. Yet the same voices that describe housing as "challenging" appear on screen, blood-serious, calling for "resilience," "dienstplicht," "NATO obligations," and readiness to fight for values and territory.</p>
 
-    <div class="data-callout">
-      <h4>Measured: The Dutch squeeze</h4>
-      <ul>
-        <li>Prospective buyers under 35, especially current renters, face affordability shortfalls often exceeding &euro;100,000 when attempting to finance a home on median household income amid continued price growth. (NIDI / CBS housing analysis)</li>
-        <li>Student housing shortages are acute: projections show tens of thousands of rooms exiting the market, sustaining rents structurally high relative to incomes. (Kences, 2025)</li>
-        <li>A 2026 NIDI study links high home prices and the mismatch between desired family-sized homes and available stock directly to postponed family formation, contributing to the observed decline in birth rates.</li>
-        <li>Discussions around reactivating conscription &mdash; dienstplicht, suspended in active form since 1997, never abolished &mdash; have accelerated. The Netherlands is expanding toward 122,000 military personnel by 2030. Letters and questionnaires have already gone to 17-year-olds.</li>
-      </ul>
-    </div>
+      <div class="pull-quote">
+        Which territory, precisely? The one where entire neighbourhoods are acquired by pension funds and international investment firms while starters face multi-year waits? The one where a working twenty-something on a median income has less financial room to breathe than their parents did on a single salary in 1987?
+      </div>
 
-    <p>Loyalty, historically, did not emerge from slogans or "transition narratives." It grew from tangible stakes: a realistic path to housing, family formation, and the sense that the country asking something of you was also building something for you.</p>
+      <p>The political elite seems genuinely surprised that the emotional bond between younger generations and their institutions is fraying.</p>
 
-    <p>Now, one side builds "transitions." Housing transition. Energy transition. Food transition. Mobility transition. Everything is transforming &mdash; except the lived reality of the young people being asked to defend it.</p>
+      <h2>The Dutch Case in Numbers</h2>
 
-    <!-- IMG_9073.png: "transities" section of column -->
-    <div class="image-slot">
-      <div class="slot-label">Insert image here &mdash; "transities" section</div>
-      <div class="slot-name">IMG_9073.png</div>
-    </div>
+      <img src="/home/workdir/artifacts/imagine_images/7Yicm.jpg" alt="Split image: cramped student room vs luxury building with record profits">
+      <p class="img-caption">Values without perspective become abstract slogans.</p>
 
-    <h2>The Von der Leyen Footnote</h2>
+      <div class="box">
+        <h3>Measured: The Dutch squeeze</h3>
+        <ul>
+          <li>Prospective buyers under 35 face affordability shortfalls often exceeding €100,000 (NIDI / CBS).</li>
+          <li>Student housing shortages are acute (Kences, 2025).</li>
+          <li>High home prices directly linked to postponed family formation and declining birth rates (NIDI 2026).</li>
+          <li>Conscription discussions have accelerated. Netherlands targeting 122,000 military personnel by 2030.</li>
+        </ul>
+      </div>
 
-    <p>A pointed piece of archival record captures the elite-youth disconnect with considerable economy. When asked whether any colleagues had sent their own children into the Bundeswehr, the answer from the room was delivered with a candour rarely heard in Brussels corridors:</p>
+      <h2>The Von der Leyen Footnote</h2>
 
-    <div class="pull-quote">
-      <p>"Ist jemand bei der Bundeswehr von ihren Kindern?" &nbsp; "Nein. Die sind doch nicht bescheuert."</p>
-      <cite>&mdash; Ursula von der Leyen, on record</cite>
-    </div>
+      <div class="pull-quote">
+        "Ist jemand bei der Bundeswehr von ihren Kindern?" &nbsp; "Nein. Die sind doch nicht bescheuert."
+      </div>
 
-    <div>
-      <div class="satire-flag">Satire</div>
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/8g3S_vxQAIs" title="Von der Leyen Bundeswehr clip" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="video-caption">
-          Satire: The Bundeswehr and its recruitment problem &mdash; Extra 3 / NDR &mdash;
-          <a href="https://www.ardmediathek.de/video/extra-3/die-bundeswehr-und-ihr-nachwuchsproblem/ndr/" target="_blank" rel="noopener">ARD Mediathek</a>
+      <div>
+        <span class="satire-flag">Satire</span>
+        <div class="video-embed">
+          <iframe src="https://www.youtube.com/embed/8g3S_vxQAIs" allowfullscreen></iframe>
         </div>
       </div>
-    </div>
 
-    <p>The logic follows itself to a conclusion so neat it barely requires comment. Defend the continent. Just not with our children. They are not stupid.</p>
+      <h2>Echoes Across Europe</h2>
 
-    <h2>Echoes Across Europe</h2>
+      <img src="/home/workdir/artifacts/imagine_images/NMlvA.jpg" alt="Map showing neighborhoods acquired by investment funds">
+      <p class="img-caption">Which fatherland, precisely?</p>
 
-    <!-- IMG_9072.png: "welk vaderland precies" section -->
-    <div class="image-slot">
-      <div class="slot-label">Insert image here &mdash; "welk vaderland" section</div>
-      <div class="slot-name">IMG_9072.png</div>
-    </div>
-
-    <p>The Dutch case would be easier to dismiss if it were local. It is not.</p>
-
-    <div class="data-callout">
-      <h4>Pan-European evidence base</h4>
-      <ul>
-        <li><strong>Housing overburden (Eurostat 2024):</strong> 9.7% of young people aged 15&ndash;29 across the EU live in households spending more than 40% of disposable income on housing &mdash; above the general population average. The Netherlands and Denmark are among the most affected. Overcrowding rates for this cohort stand at 26.5% EU-wide.</li>
-        <li><strong>EU Affordable Housing Plan (late 2025):</strong> The European Commission launched its first dedicated affordable housing plan explicitly in response to widespread cost burdens on younger and vulnerable groups. Its own framing concedes the problem is structural, not cyclical.</li>
-        <li><strong>Fertility and family formation (OECD):</strong> Rising house prices and rental burdens are consistently associated with postponed parenthood and lower fertility among non-homeowners in expensive markets. The post-2010 fertility decline across most EU countries tracks this pattern.</li>
-        <li><strong>Conscription across the EU (nine active systems):</strong> Austria, Cyprus, Denmark, Estonia, Finland, Greece, Latvia, Lithuania, Sweden. Croatia is reintroducing elements. Germany launched voluntary pathways in 2026 with provisions for needs-based conscription if targets are missed. France is developing new voluntary youth military service. Poland is expanding training obligations.</li>
-        <li><strong>ECFR polling (2025):</strong> Majority support for expanding mandatory military service exists in France, Germany, and Poland &mdash; but this support notably weakens or disappears among 18&ndash;29-year-olds. Precisely the cohort whose participation would be central to any expanded model.</li>
-      </ul>
-    </div>
-
-    <h3>A generation without security does not develop attachment to institutions</h3>
-
-    <!-- IMG_9071.png: column opening text, Max von Kreyfelt byline -->
-    <div class="image-slot">
-      <div class="slot-label">Insert image here &mdash; column byline / opening</div>
-      <div class="slot-name">IMG_9071.png</div>
-    </div>
-
-    <p>Von Kreyfelt names it directly: a generation without security develops no attachment to institutions. That is not unwillingness. That is a psychological effect &mdash; the predictable output of a social contract that has been progressively renegotiated in one direction only.</p>
-
-    <p>People do not defend a policy document. They defend an identity. A country where you can live, build, stay, and take root. Not a system in which complete generations are economically squeezed while real estate funds post record profits and politicians congratulate each other on "historic housing deals" that exist mainly as PowerPoint presentations and press photos with hard hats.</p>
-
-    <div class="closing-questions">
-      <h4>Questions that travel beyond borders</h4>
-      <p>When multiple European societies simultaneously intensify demands for defence readiness while data show persistent shortfalls in the conditions that historically underpinned that readiness &mdash; what does this imply for long-term cohesion?</p>
-      <p>If housing is treated primarily as an asset class while young adults face elevated cost-overburden rates and delayed milestones, what signal is transmitted about whose security is being secured first?</p>
-      <p>When polls reveal a generational divergence in support for conscription precisely among those asked to bear the human element of defence, what does that suggest about the perceived fairness of the social contract?</p>
-      <p>A generation that experiences systematic erosion of the foundations for resilience, realism, and rooted identity may still answer calls to service. The deeper question is whether the resulting attachment will be robust &mdash; or whether it will rest on thinner soil than earlier eras took for granted.</p>
-    </div>
-
-    <p>These are not arguments for any particular ideology. They are observations about measurable outcomes &mdash; the kind of questions that remain useful to examine on their merits, without reflexive framing, for anyone concerned with the durability of European societies in the years ahead.</p>
-
-    <p class="article-tag">#TruthWithTeeth</p>
-
-    <div class="source-credits">
-      <h4>Sources &amp; Credits</h4>
-      <p><strong>Original column (Dutch):</strong> Max von Kreyfelt &mdash; <a href="https://x.com/maxvonkreyfelt/status/2063843215325757664" target="_blank" rel="noopener">"Geen woning. Geen toekomst. Maar w&eacute;l het front."</a></p>
-      <p><strong>Title drawn from:</strong> Robert M. Van Praag &mdash; <a href="https://x.com/robertmvanpraag/status/2063918282457915671" target="_blank" rel="noopener">comment, 8 June 2026</a></p>
-      <p><strong>Max von Kreyfelt:</strong> <a href="https://TICQ.nl" target="_blank" rel="noopener">TICQ.nl</a> &nbsp;|&nbsp; <a href="https://max1909.backme.org" target="_blank" rel="noopener">max1909.backme.org</a> &nbsp;|&nbsp; <a href="https://gofund.me/c9f226cde" target="_blank" rel="noopener">gofund.me/c9f226cde</a></p>
-      <p><strong>Statistical sources:</strong> Eurostat Housing Statistics 2024; NIDI 2026; Kences student housing monitor 2025; European Commission Affordable Housing Plan 2025; OECD housing affordability surveys; European Council on Foreign Relations polling 2025; CBS (Statistics Netherlands).</p>
-      <p><strong>Satire video:</strong> Extra 3 / NDR &mdash; <a href="https://www.ardmediathek.de/video/extra-3/die-bundeswehr-und-ihr-nachwuchsproblem/ndr/" target="_blank" rel="noopener">ardmediathek.de</a></p>
-      <p style="margin-top:.8rem;color:var(--text-dim);font-size:.72rem;">Composed by M&iacute;mir M&iacute;misbrunnr for Echo Truth Hub. Pan-European evidence layer developed with AI research assistance.</p>
-    </div>
-
-  </section>
-
-  <!-- DUTCH -->
-  <section class="lang-section" id="lang-nl">
-
-    <div class="attribution-banner" style="margin:0 0 2rem 0;border-bottom:none;border-top:1px solid #2a2a2a;">
-      <p>
-        Hieronder de originele column van <strong>Max von Kreyfelt</strong>, integraal en ongewijzigd, gevolgd door ETH's pan-Europees bewijsmateriaal.<br>
-        Origineel: <a href="https://x.com/maxvonkreyfelt/status/2063843215325757664" target="_blank" rel="noopener">x.com/maxvonkreyfelt/status/2063843215325757664</a>
-      </p>
-    </div>
-
-    <p>Er zit iets wrangs in de manier waarop de politiek over jongeren spreekt.</p>
-
-    <p>Aan de ene kant krijgen ze dagelijks te horen dat ze "hun verantwoordelijkheid moeten nemen", "solidair moeten zijn" en "de democratie moeten verdedigen".</p>
-
-    <p>Aan de andere kant mogen diezelfde jongeren tot hun vijfendertigste in een bezemkast wonen voor 1400 euro per maand, mits ze &uuml;berhaupt nog een voordeur kunnen vinden.</p>
-
-    <p>Welkom in het Nederland van 2026:<br>
-    waar een studentenschuld normaal is,<br>
-    een koopwoning sciencefiction,<br>
-    en een huurcontract meer exclusiviteit heeft dan een backstagepas bij Lowlands.</p>
-
-    <!-- IMG_9075.png: opening visual — column hero image -->
-    <div class="image-slot">
-      <div class="slot-label">Voeg afbeelding in &mdash; openingsvisual</div>
-      <div class="slot-name">IMG_9075.png</div>
-    </div>
-
-    <p>Maar ondertussen verschijnen dezelfde bestuurders w&eacute;l bloedserieus op televisie om te praten over "weerbaarheid", "dienstplicht", "NAVO-verplichtingen" en de bereidheid van jongeren om te vechten voor vrijheid en vaderland.</p>
-
-    <p>Welk vaderland precies?</p>
-
-    <p>Dat land waar starters geen huis kunnen kopen omdat complete wijken zijn opgekocht door pensioenfondsen en internationale investeringsmaatschappijen?</p>
-
-    <p>Dat land waar jongeren permanent horen dat ze "te hoge verwachtingen" hebben wanneer ze simpelweg een betaalbare woning zoeken?</p>
-
-    <!-- IMG_9074.png: "welk vaderland" section -->
-    <div class="image-slot">
-      <div class="slot-label">Voeg afbeelding in &mdash; "welk vaderland" sectie</div>
-      <div class="slot-name">IMG_9074.png</div>
-    </div>
-
-    <p>Dat land waar een werkende twintiger met een modaal inkomen tegenwoordig financi&euml;el minder bewegingsruimte heeft dan zijn ouders met &eacute;&eacute;n salaris in 1987?</p>
-
-    <p>De politieke elite lijkt verbaasd dat de emotionele binding tussen jongeren en samenleving afneemt.</p>
-
-    <p>Alsof loyaliteit ontstaat uit stikstofrapporten, QR-codes, flexcontracten en eindeloze klimaatheffingen.</p>
-
-    <p>Alsof mensen uit liefde bereid zijn offers te brengen voor een systeem dat hen structureel buitensluit.</p>
-
-    <p>Een generatie die geen zekerheid bezit, ontwikkelt ook geen verbondenheid met instituties.</p>
-
-    <p>Dat is geen onwil, maar een psychologisch effect.</p>
-
-    <!-- IMG_9073.png: "transities" section -->
-    <div class="image-slot">
-      <div class="slot-label">Voeg afbeelding in &mdash; "transities" sectie</div>
-      <div class="slot-name">IMG_9073.png</div>
-    </div>
-
-    <p>Vroeger bouwde een samenleving nog aan loyaliteit.<br>
-    Een vaste baan.<br>
-    Een betaalbaar huis.<br>
-    Een gezin.<br>
-    Een toekomst.</p>
-
-    <p>Nu bouwt men vooral aan "transities".</p>
-
-    <p>Woningtransitie.<br>
-    Energietransitie.<br>
-    Voedseltransitie.<br>
-    Mobiliteitstransitie.</p>
-
-    <p>Alles transformeert behalve het leven van jongeren zelf.</p>
-
-    <p>Dat blijft stilstaan in een overprijsde studio van 22 vierkante meter met schimmel in de badkamer en een studieschuld als interieurdecoratie.</p>
-
-    <p>En dan klinkt vanuit Den Haag de morele oproep:<br>
-    "Jullie moeten klaarstaan om onze waarden te verdedigen."</p>
-
-    <p>Maar waarden zonder perspectief worden abstracte slogans.</p>
-
-    <p>Mensen verdedigen geen beleidsdocument.<br>
-    Mensen verdedigen een identiteit.</p>
-
-    <p>Een land waar je kunt wonen.<br>
-    Leven.<br>
-    Opbouwen.<br>
-    Wortelen.</p>
-
-    <!-- IMG_9072.png: identity/roots section -->
-    <div class="image-slot">
-      <div class="slot-label">Voeg afbeelding in &mdash; identiteit sectie</div>
-      <div class="slot-name">IMG_9072.png</div>
-    </div>
-
-    <p>Niet een systeem waarin complete generaties economisch worden uitgeknepen terwijl vastgoedfondsen recordwinsten boeken en politici elkaar feliciteren met "historische woondeals" die vooral bestaan uit PowerPointpresentaties en persfoto's met bouwhelmen.</p>
-
-    <p>Het probleem; minder jongeren hebben het gevoel dat dit land &oacute;&oacute;k bereid is iets voor h&eacute;n op te offeren.</p>
-
-    <!-- IMG_9071.png: column byline / closing -->
-    <div class="image-slot">
-      <div class="slot-label">Voeg afbeelding in &mdash; afsluiting / byline</div>
-      <div class="slot-name">IMG_9071.png</div>
-    </div>
-
-    <h2>ETH: De Europese context</h2>
-
-    <div class="data-callout">
-      <h4>Gemeten: de Nederlandse klem</h4>
-      <ul>
-        <li>Koopstarters onder de 35 jaar hebben een financieringstekort dat regelmatig boven de &euro;100.000 uitkomt bij financiering op modaal inkomen. (NIDI / CBS woningmarktanalyse)</li>
-        <li>Studentenhuisvestingstekorten zijn acuut: tienduizenden kamers verlaten de markt, met structureel hoge huren als gevolg. (Kences, 2025)</li>
-        <li>Een NIDI-studie uit 2026 koppelt hoge woningprijzen direct aan uitgestelde gezinsvorming en bijdrage aan de daling van geboortecijfers.</li>
-        <li>Dienstplicht: opgeschort in actieve vorm sinds 1997, nooit afgeschaft. Nederland streeft naar 122.000 militairen in 2030. Brieven en vragenlijsten zijn al verstuurd naar 17-jarigen.</li>
-      </ul>
-    </div>
-
-    <h2>De Von der Leyen-voetnoot</h2>
-
-    <div class="pull-quote">
-      <p>"Ist jemand bei der Bundeswehr von ihren Kindern?" &nbsp; "Nein. Die sind doch nicht bescheuert."</p>
-      <cite>&mdash; Ursula von der Leyen, op video vastgelegd</cite>
-    </div>
-
-    <div>
-      <div class="satire-flag">Satire</div>
-      <div class="video-embed">
-        <iframe src="https://www.youtube.com/embed/8g3S_vxQAIs" title="Von der Leyen Bundeswehr fragment" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <div class="video-caption">
-          Satire: De Bundeswehr en haar wervingsprobleem &mdash; Extra 3 / NDR &mdash;
-          <a href="https://www.ardmediathek.de/video/extra-3/die-bundeswehr-und-ihr-nachwuchsproblem/ndr/" target="_blank" rel="noopener">ARD Mediathek</a>
-        </div>
+      <div class="box">
+        <h3>Pan-European evidence base</h3>
+        <ul>
+          <li>9.7% of EU youth in housing cost overburden (Eurostat 2024).</li>
+          <li>Nine EU countries operate active conscription systems.</li>
+          <li>Support for mandatory service weakens significantly among 18–29-year-olds (ECFR 2025).</li>
+        </ul>
       </div>
+
+      <div class="closing">
+        <h4>Questions that travel beyond borders</h4>
+        <p>When societies intensify defence demands while the historical conditions for that readiness are structurally eroded — what does this imply for long-term cohesion?</p>
+        <p>If housing is treated primarily as an asset class while young adults face elevated cost-overburden, what signal is sent about whose security comes first?</p>
+      </div>
+
+      <p class="article-tag">#TruthWithTeeth</p>
+
+      <div class="sources">
+        <h4>Sources</h4>
+        <ul>
+          <li>Max von Kreyfelt column (25 May 2026)</li>
+          <li>Eurostat, NIDI, Kences, ECFR, CBS</li>
+        </ul>
+      </div>
+
     </div>
 
-    <p>De logica volgt zichzelf tot een conclusie die nauwelijks commentaar behoeft. Verdedig het continent. Alleen niet met onze kinderen. Die zijn toch niet gek.</p>
+    <!-- DUTCH -->
+    <div id="lang-nl" class="lang-section">
+      <p>Er zit iets wrangs in de manier waarop de politiek over jongeren spreekt.</p>
+      <p>Aan de ene kant krijgen ze te horen dat ze verantwoordelijkheid moeten nemen en de democratie moeten verdedigen. Aan de andere kant mogen ze tot hun 35ste in een bezemkast wonen voor 1400 euro per maand.</p>
 
-    <div class="data-callout">
-      <h4>Pan-Europese feitenbasis</h4>
-      <ul>
-        <li><strong>Woonlastendruk (Eurostat 2024):</strong> 9,7% van jongeren van 15&ndash;29 jaar in de EU woont in huishoudens die meer dan 40% van het besteedbaar inkomen aan wonen kwijt zijn. Nederland en Denemarken behoren tot de zwaarst getroffen landen. Overbewoning treft 26,5% EU-breed.</li>
-        <li><strong>EU Affordable Housing Plan (eind 2025):</strong> De Europese Commissie erkent het probleem als structureel, niet cyclisch.</li>
-        <li><strong>Vruchtbaarheid (OESO):</strong> Stijgende huizenprijzen correleren consistent met uitgesteld ouderschap en lagere vruchtbaarheid. De post-2010 geboortedaling in de meeste EU-landen volgt dit patroon.</li>
-        <li><strong>Dienstplicht EU (negen actieve systemen):</strong> Oostenrijk, Cyprus, Denemarken, Estland, Finland, Griekenland, Letland, Litouwen, Zweden. Kroati&euml; voert het opnieuw in. Duitsland: vrijwillige trajecten in 2026, met bepalingen voor verplichte dienstplicht als doelstellingen niet worden gehaald. Polen breidt trainingsverplichtingen uit.</li>
-        <li><strong>ECFR-peiling (2025):</strong> Meerderheidssteun voor uitbreiding van dienstplicht in Frankrijk, Duitsland en Polen &mdash; maar valt weg bij de 18&ndash;29-jarigen. Precies de groep wier deelname doorslaggevend zou zijn.</li>
-      </ul>
+      <img src="/home/workdir/artifacts/imagine_images/Wan8V.jpg" alt="Jonge man met protestbord">
+      <p class="img-caption">Openingsvisual — de geleefde realiteit.</p>
+
+      <div class="pull-quote">
+        Welk vaderland precies? Dat land waar complete wijken zijn opgekocht door pensioenfondsen en internationale investeerders?
+      </div>
+
+      <div class="box">
+        <h3>Gemeten: de Nederlandse klem</h3>
+        <ul>
+          <li>Koopstarters onder 35 hebben vaak een financieringstekort boven de €100.000.</li>
+          <li>Studentenhuisvestingstekorten zijn structureel (Kences 2025).</li>
+          <li>Hoge woningprijzen hangen direct samen met uitgestelde gezinsvorming (NIDI 2026).</li>
+        </ul>
+      </div>
+
+      <p class="article-tag">#TruthWithTeeth</p>
     </div>
 
-    <div class="closing-questions">
-      <h4>Vragen die grensoverschrijdend zijn</h4>
-      <p>Als meerdere Europese samenlevingen tegelijk de eisen rond defensiebereidheid opvoeren, terwijl de historische randvoorwaarden daarvoor structureel ontbreken, wat impliceert dat dan voor de houdbaarheid op lange termijn?</p>
-      <p>Als woningbezit primair als activaklasse wordt behandeld terwijl jongeren te hoge woonlasten dragen, welk signaal geeft dat over wiens zekerheid als eerste wordt gewaarborgd?</p>
-      <p>Als peilingen een generatiekloof laten zien in steun voor dienstplicht, precies bij de groep die het menselijk fundament van defensie moet vormen, wat zegt dat over de ervaren rechtvaardigheid van het sociale contract?</p>
-      <p>Een generatie die systematisch de fundamenten voor veerkracht, realisme en gewortelde identiteit ziet afkalven, geeft misschien toch gehoor aan oproepen tot dienst. De diepere vraag is of de resulterende verbondenheid robuust zal zijn &mdash; of op dunner bodem rust dan eerdere generaties als vanzelfsprekend beschouwden.</p>
+    <div class="article-actions">
+      <button class="action-btn" onclick="shareArticle('twitter')"><i class="fab fa-x-twitter"></i> Share on X</button>
     </div>
 
-    <p class="article-tag">#TruthWithTeeth</p>
-
-    <div class="source-credits">
-      <h4>Bronnen &amp; credits</h4>
-      <p><strong>Originele column (NL):</strong> Max von Kreyfelt &mdash; <a href="https://x.com/maxvonkreyfelt/status/2063843215325757664" target="_blank" rel="noopener">"Geen woning. Geen toekomst. Maar w&eacute;l het front."</a></p>
-      <p><strong>Titel ontleend aan:</strong> Robert M. Van Praag &mdash; <a href="https://x.com/robertmvanpraag/status/2063918282457915671" target="_blank" rel="noopener">reactie, 8 juni 2026</a></p>
-      <p><strong>Max von Kreyfelt:</strong> <a href="https://TICQ.nl" target="_blank" rel="noopener">TICQ.nl</a> &nbsp;|&nbsp; <a href="https://max1909.backme.org" target="_blank" rel="noopener">max1909.backme.org</a> &nbsp;|&nbsp; <a href="https://gofund.me/c9f226cde" target="_blank" rel="noopener">gofund.me/c9f226cde</a></p>
-      <p><strong>Statistieken:</strong> Eurostat Woonstatistieken 2024; NIDI 2026; Kences studentenhuisvestingsmonitor 2025; Europese Commissie Affordable Housing Plan 2025; OESO; ECFR-peiling 2025; CBS.</p>
-      <p><strong>Satire video:</strong> Extra 3 / NDR &mdash; <a href="https://www.ardmediathek.de/video/extra-3/die-bundeswehr-und-ihr-nachwuchsproblem/ndr/" target="_blank" rel="noopener">ardmediathek.de</a></p>
-      <p style="margin-top:.8rem;color:var(--text-dim);font-size:.72rem;">De Nederlandstalige columntekst is integraal en ongewijzigd overgenomen met toestemming van Max von Kreyfelt. ETH-secties (Von der Leyen, pan-Europese data, sluitende vragen) zijn toegevoegd door M&iacute;mir M&iacute;misbrunnr.</p>
-    </div>
-
-  </section>
+  </div>
+</div>
 
 </main>
 
+<aside class="sidebar">
+  <div class="sidebar-section">
+    <h3>Evidence Bounty</h3>
+    <div class="bounty-card">
+      <p>Found an error or stronger evidence? Submit it.</p>
+      <a href="https://echotruthhub.com" class="bounty-btn">Submit Evidence →</a>
+    </div>
+  </div>
+  <div class="sidebar-section">
+    <h3>Follow ETH</h3>
+    <div class="x-feed-container">
+      <a class="twitter-timeline" data-theme="dark" data-chrome="noheader nofooter noborders transparent" href="https://twitter.com/EchoTruthHub">Tweets by EchoTruthHub</a>
+    </div>
+  </div>
+</aside>
+
+</div>
+
 <footer>
-  <p>Echo Truth Hub &nbsp;|&nbsp; <a href="https://echotruthhub.news">echotruthhub.news</a> &nbsp;|&nbsp; COC 51644525, The Hague &nbsp;|&nbsp; #TruthWithTeeth</p>
+  <p>
+    <a href="/">Home</a>
+    <a href="/blog.html">Commentary</a>
+    <a href="https://x.com/EchoTruthHub" target="_blank">X</a>
+  </p>
+  <p style="margin-top:1rem;">© 2026 Echo Truth Hub — The Hague, Netherlands</p>
 </footer>
 
 <script>
-function switchLang(lang){
-  document.querySelectorAll('.lang-section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-  document.getElementById('lang-'+lang).classList.add('active');
-  document.querySelector('[onclick="switchLang(\''+lang+'\')"]').classList.add('active');
+function switchLang(lang) {
+  document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('lang-' + lang).classList.add('active');
+  document.querySelector('[onclick="switchLang(\'' + lang + '\')"]').classList.add('active');
+}
+
+function shareArticle(platform) {
+  const url = encodeURIComponent(window.location.href);
+  const text = encodeURIComponent('No Home. No Future. Your Rifle. #TruthWithTeeth');
+  if (platform === 'twitter') {
+    window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+  }
 }
 </script>
 </body>
